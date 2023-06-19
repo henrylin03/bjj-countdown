@@ -16,6 +16,18 @@
     </div>
     <div id="next-comp-form">
         <h2>Please enter the details of your next BJJ competition</h2>
+        <p id="form-explanation">Mandatory fields are denoted using *</p>
+        <form method="POST">
+            <label for="comp-name" id="comp-name-label">*Comp Name </label>
+            <input id="comp-name" name="comp-name" type="text" required>
+            <label for="comp-date" id="comp-date-label">*Date </label>
+            <input id="comp-date" name="comp-date" type="date" min="2023-07-01" required>
+            <br>
+            <label for="start-time" id="time-label">Start Time </label>
+            <input id="start-time" name="start-time" type="time">
+            <small>If known</small>
+
+        </form>
     </div>
 </body>
 
