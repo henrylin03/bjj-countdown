@@ -1,0 +1,10 @@
+* {
+  padding: 8px;
+  margin: 5px;
+  box-sizing: border-box; /* resets box model */
+}
+
+#countdown-timer {
+  width: 400px;
+  margin: 0 auto;
+}
