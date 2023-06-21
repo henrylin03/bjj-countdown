@@ -12,15 +12,18 @@ header {
   background-color: #333;
   color: #fff;
   padding: 30px;
+  line-height: 1.5;
 }
 
 main {
   padding: 20px;
+  text-align: center;
 }
 
 #countdown-timer {
   text-align: center;
   font-size: 24px;
+  padding: 15px;
 }
 
 #countdown-timer h2 {
@@ -32,12 +35,18 @@ main {
   margin: 10px;
 }
 
+#next-competition-div {
+  margin-top: 20px;
+  line-height: 2;
+}
+
 form {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 label {
-  flex-basis: 100%;
+  margin-left: 20px;
   margin-bottom: 10px;
 }
 
@@ -56,11 +65,12 @@ input {
 }
 
 footer {
-  background-color: grey;
+  background-color: gray;
   color: #fff;
   padding: 10px;
   text-align: center;
   font-style: italic;
+  font-size: 12px;
 }
 
 footer a {
