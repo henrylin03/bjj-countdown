@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 header {
@@ -17,12 +18,14 @@ header {
 
 main {
   padding: 20px;
-  text-align: center;
 }
 
 #countdown-timer {
   text-align: center;
   padding: 15px;
+  background-color: lightgrey;
+  width: 800px;
+  margin: 0 auto;
 }
 
 #countdown-timer h2 {
@@ -68,7 +71,6 @@ footer {
   background-color: gray;
   color: #fff;
   padding: 10px;
-  text-align: center;
   font-style: italic;
   font-size: 12px;
 }
