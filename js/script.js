@@ -1,50 +1,40 @@
-const addLeadingZeroes = (value) => {
-  if (value < 10) {
-    return `0${value}`;
-  }
-  return value;
+const ensureDateInFuture = () => {
+  let dateToday = new Date().toISOString().slice(0, 10);
+  let competitionDateInput = document.getElementById("competition-date");
+  competitionDateInput.setAttribute("min", dateToday);
 };
 
-const findTimeUntilCompetition = () => {
-  let timeObject = {};
-  const now = new Date().getTime();
+const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
+const setTimeUntilCompetition = () => {
+  let now = new Date().getTime();
   const competitionDate = new Date(
     document.getElementById("competition-date").value
   );
   const timeUntilCompetition = competitionDate - now;
 
-  timeObject.days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
-  timeObject.hours = Math.floor(
+  //calculate each time unit from "now" until competition date
+  days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
+  hours = Math.floor(
     (timeUntilCompetition % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  timeObject.minutes = Math.floor(
-    (timeUntilCompetition % (1000 * 60 * 60)) / (1000 * 60)
-  );
-  timeObject.seconds = Math.floor((timeUntilCompetition % (1000 * 60)) / 1000);
+  minutes = Math.floor((timeUntilCompetition % (1000 * 60 * 60)) / (1000 * 60));
+  seconds = Math.floor((timeUntilCompetition % (1000 * 60)) / 1000);
 
-  return timeObject;
+  //update countdown elements
+  document.getElementById("days").innerHTML = addLeadingZeroes(days);
+  document.getElementById("hours").innerHTML = addLeadingZeroes(hours);
+  document.getElementById("minutes").innerHTML = addLeadingZeroes(minutes);
+  document.getElementById("seconds").innerHTML = addLeadingZeroes(seconds);
 };
 
 const startCountdown = (event) => {
-  event.preventDefault(); // prevents form submission
-
-  let timeUntilCompetition = findTimeUntilCompetition();
-
-  for (let timeUnit in timeUntilCompetition) {
-    document.getElementById(String(timeUnit)).innerHTML = addLeadingZeroes(
-      timeUntilCompetition[timeUnit]
-    );
-  }
+  event.preventDefault(); //prevents form submission
+  setInterval(setTimeUntilCompetition, 1000);
 };
 
-const ensureCompetitionInFuture = () => {
-  const dateToday = new Date().toISOString().split("T")[0];
-  const competitionDateInput = document.getElementById("competition-date");
-  competitionDateInput.setAttribute("min", dateToday);
-};
+//run script
+ensureDateInFuture();
 
-ensureCompetitionInFuture();
-document
-  .getElementById("next-competition-form")
-  .addEventListener("submit", startCountdown);
+const competitionFormElem = document.getElementById("next-competition-form");
+competitionFormElem.addEventListener("submit", startCountdown);
