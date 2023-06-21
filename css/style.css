@@ -22,7 +22,6 @@ main {
 
 #countdown-timer {
   text-align: center;
-  font-size: 24px;
   padding: 15px;
 }
 
@@ -33,6 +32,7 @@ main {
 #countdown-timer div {
   display: inline-block; /* this makes it horizontally aligned */
   margin: 10px;
+  font-size: 100px;
 }
 
 #next-competition-div {
