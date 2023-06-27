@@ -82,6 +82,13 @@ input {
   cursor: not-allowed;
 }
 
+#error-message {
+  visibility: hidden;
+  color: #ff7070;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
 footer {
   background-color: gray;
   color: #fff;

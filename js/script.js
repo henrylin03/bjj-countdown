@@ -9,13 +9,16 @@ const competitionDateInFuture = () => {
 };
 
 const enableSubmission = () => {
-  const competitionDateInput = document.getElementById("competition-date");
   const submitButton = document.getElementById("submit-button");
-  if (competitionDateInFuture()) {
-    submitButton.removeAttribute("disabled");
+  const errorMessage = document.getElementById("error-message");
+
+  if (!competitionDateInFuture()) {
+    errorMessage.innerHTML = "Please select a date in the future";
+    errorMessage.style.visibility = "visible";
     return;
   }
-  alert("Please select a date in the future.");
+  submitButton.removeAttribute("disabled");
+  errorMessage.style.visibility = "hidden";
 };
 
 const setTimeUntilCompetition = () => {
