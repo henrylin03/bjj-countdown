@@ -73,6 +73,10 @@ input {
   cursor: pointer;
 }
 
+#submit-button:hover {
+  background-color: #ff7f00;
+}
+
 footer {
   background-color: gray;
   color: #fff;
