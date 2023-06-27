@@ -34,7 +34,6 @@ main {
 }
 
 #countdown-timer div {
-  font-family: "Orbitron", sans-serif;
   display: inline-block; /* this makes it horizontally aligned */
   margin: 10px;
   font-size: 100px;
