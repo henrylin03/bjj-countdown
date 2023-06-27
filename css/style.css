@@ -31,8 +31,6 @@ main {
 
 #countdown-timer h2 {
   font-size: 24px;
-  margin-top: 0;
-  margin-bottom: 10px;
 }
 
 #countdown-timer div {
@@ -47,8 +45,8 @@ main {
   opacity: 0.8;
 }
 
-#next-competition-div {
-  margin-top: 20px;
+#next-competition {
+  margin-top: 30px;
   line-height: 2;
 }
 
