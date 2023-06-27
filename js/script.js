@@ -1,10 +1,22 @@
-const ensureDateInFuture = () => {
-  let dateToday = new Date().toISOString().slice(0, 10);
-  let competitionDateInput = document.getElementById("competition-date");
-  competitionDateInput.setAttribute("min", dateToday);
+const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
+
+const competitionDateInFuture = () => {
+  const competitionDateInput = document.getElementById("competition-date");
+  const competitionDate = new Date(competitionDateInput.value);
+  const now = new Date();
+
+  return competitionDate > now;
 };
 
-const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
+const enableSubmission = () => {
+  const competitionDateInput = document.getElementById("competition-date");
+  const submitButton = document.getElementById("submit-button");
+  if (competitionDateInFuture()) {
+    submitButton.removeAttribute("disabled");
+    return;
+  }
+  alert("Please select a date in the future.");
+};
 
 const setTimeUntilCompetition = () => {
   let now = new Date().getTime();
@@ -34,7 +46,8 @@ const startCountdown = (event) => {
 };
 
 //run script
-ensureDateInFuture();
+const competitionDateInput = document.getElementById("competition-date");
+competitionDateInput.addEventListener("blur", enableSubmission); //event is when user clicks off input
 
-const competitionFormElem = document.getElementById("next-competition-form");
-competitionFormElem.addEventListener("submit", startCountdown);
+const submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", startCountdown);

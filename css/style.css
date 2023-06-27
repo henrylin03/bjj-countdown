@@ -77,6 +77,11 @@ input {
   background-color: #ff7f00;
 }
 
+#submit-button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
 footer {
   background-color: gray;
   color: #fff;
