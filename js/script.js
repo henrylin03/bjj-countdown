@@ -10,16 +10,17 @@ const competitionDateInFuture = () => {
 };
 
 //prevents submission of form if value of competition date invalid
-const enableSubmission = () => {
+const checkValuesAndEnableSubmission = () => {
   const submitButton = document.getElementById("submit-button");
   const errorMessage = document.getElementById("error-message");
 
+  submitButton.disabled = true;
   if (!competitionDateInFuture()) {
     errorMessage.innerHTML = "Please select a date in the future";
     errorMessage.style.visibility = "visible";
     return;
   }
-  submitButton.removeAttribute("disabled");
+  submitButton.disabled = false;
   errorMessage.style.visibility = "hidden";
 };
 
@@ -69,7 +70,7 @@ const showCompetitionName = () => {
   competitionNameDisplay.innerHTML = titleCase(competitionNameInputted);
 };
 
-const startCountdown = (event) => {
+const setCountdown = (event) => {
   event.preventDefault(); //prevents form submission
   setInterval(setTimeUntilCompetition, 1000);
   showCompetitionName();
@@ -77,7 +78,9 @@ const startCountdown = (event) => {
 
 //run script
 const competitionDateInput = document.getElementById("competition-date");
-competitionDateInput.addEventListener("blur", enableSubmission); //event is when user clicks off input
+competitionDateInput.addEventListener("blur", checkValuesAndEnableSubmission); //when user clicks off input
 
 const submitButton = document.getElementById("submit-button");
-submitButton.addEventListener("click", startCountdown);
+submitButton.addEventListener("click", setCountdown);
+
+competitionDateInput.addEventListener("input", checkValuesAndEnableSubmission);
