@@ -13,6 +13,7 @@
 
     <main>
         <section id="countdown-timer">
+            <h2 id="competition-name"></h2>
             <div class="timeunit" id="days">00</div>
             <small class="timeunit-label">days</small>
             <div class="timeunit" id="hours">00</div>
@@ -28,8 +29,8 @@
             <form id="next-competition-form">
                 <label for="competition-date">Competition Date:</label>
                 <input id="competition-date" name="competition-date" type="date" required>
-                <label for="competition-name">Competition Name:</label>
-                <input id="competition-name" name="competition-name" type="text">
+                <label for="competition-name-input">Competition Name:</label>
+                <input id="competition-name-input" name="competition-name" type="text">
                 <br>
                 <button id="submit-button" disabled>Start Countdown</button>
                 <div id="error-message"></div>

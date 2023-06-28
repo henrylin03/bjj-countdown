@@ -1,5 +1,6 @@
 const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
+//helper function to check if the competition date entered by user is in the future
 const competitionDateInFuture = () => {
   const competitionDateInput = document.getElementById("competition-date");
   const competitionDate = new Date(competitionDateInput.value);
@@ -8,6 +9,7 @@ const competitionDateInFuture = () => {
   return competitionDate > now;
 };
 
+//prevents submission of form if value of competition date invalid
 const enableSubmission = () => {
   const submitButton = document.getElementById("submit-button");
   const errorMessage = document.getElementById("error-message");
@@ -21,6 +23,7 @@ const enableSubmission = () => {
   errorMessage.style.visibility = "hidden";
 };
 
+//calculates time until competition from now
 const setTimeUntilCompetition = () => {
   let now = new Date().getTime();
   const competitionDate = new Date(
@@ -43,9 +46,33 @@ const setTimeUntilCompetition = () => {
   document.getElementById("seconds").innerHTML = addLeadingZeroes(seconds);
 };
 
+const titleCase = (str) => {
+  str = str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.replace(word[0], word[0].toUpperCase()));
+
+  return str.join(" ");
+};
+
+const showCompetitionName = () => {
+  const competitionNameInput = document.getElementById(
+    "competition-name-input"
+  );
+  const competitionNameInputted = competitionNameInput.value;
+  const competitionNameDisplay = document.getElementById("competition-name");
+
+  if (!competitionNameInputted) {
+    return;
+  }
+
+  competitionNameDisplay.innerHTML = titleCase(competitionNameInputted);
+};
+
 const startCountdown = (event) => {
   event.preventDefault(); //prevents form submission
   setInterval(setTimeUntilCompetition, 1000);
+  showCompetitionName();
 };
 
 //run script
