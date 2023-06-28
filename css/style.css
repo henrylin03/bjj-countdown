@@ -33,7 +33,7 @@ main {
   font-size: 24px;
 }
 
-#countdown-timer div {
+.timeunit {
   display: inline-block; /* this makes it horizontally aligned */
   margin: 10px;
   font-size: 100px;
