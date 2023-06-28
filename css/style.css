@@ -78,7 +78,7 @@ input {
 }
 
 #submit-button:disabled {
-  background-color: #808080;
+  background-color: lightgrey;
   cursor: not-allowed;
 }
 
