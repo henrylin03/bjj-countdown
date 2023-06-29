@@ -64,7 +64,7 @@ input {
   width: 200px;
 }
 
-#submit-button {
+#start-countdown-button {
   padding: 10px 30px;
   margin-top: 30px;
   background-color: #333;
@@ -73,11 +73,11 @@ input {
   cursor: pointer;
 }
 
-#submit-button:hover {
+#start-countdown-button:hover {
   background-color: #ff7f00;
 }
 
-#submit-button:disabled {
+#start-countdown-button:disabled {
   background-color: lightgrey;
   cursor: not-allowed;
 }
