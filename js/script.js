@@ -1,4 +1,5 @@
 // get elements from DOM
+const timeUnitElements = document.getElementsByClassName("time-unit");
 const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
@@ -11,7 +12,7 @@ const competitionNameInputElement = document.getElementById(
 const competitionNameDisplay = document.getElementById(
   "competition-name-display"
 );
-const submitButton = document.getElementById("submit-button");
+const startCountdownButton = document.getElementById("start-countdown-button");
 const errorMessage = document.getElementById("error-message");
 
 let countdownInterval;
@@ -31,7 +32,6 @@ const titleCase = (str) =>
 const startCountdown = () => {
   const compNameValue = competitionNameInputElement.value;
   const compDateValue = competitionDateInputElement.value;
-  competitionNameDisplay.textContent = compNameValue;
 
   // if countdown already occurring, clear (otherwise, the countdown timer will flash)
   if (countdownInterval) {
@@ -46,8 +46,19 @@ const startCountdown = () => {
 
     if (timeUntilCompetition < 0) {
       errorMessage.textContent = "Please select a date in the future";
+      clearInterval(countdownInterval);
+
+      // clear #countdown-timer section
+      competitionNameDisplay.textContent = "";
+      for (const timeUnit of timeUnitElements) {
+        timeUnit.textContent = "00";
+      }
+
       return;
     }
+    errorMessage.textContent = "";
+
+    competitionNameDisplay.textContent = compNameValue;
 
     const days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
@@ -70,4 +81,4 @@ const startCountdown = () => {
 };
 
 // add event listener when submit button clicks
-submitButton.addEventListener("click", startCountdown);
+startCountdownButton.addEventListener("click", startCountdown);
