@@ -4,7 +4,6 @@ const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
-const competitionForm = document.getElementById("next-competition-form");
 const competitionDateInputElement = document.getElementById("competition-date");
 const competitionNameInputElement = document.getElementById(
   "competition-name-input"
