@@ -33,13 +33,13 @@ main {
   font-size: 24px;
 }
 
-.timeunit {
+.time-unit {
   display: inline-block; /* this makes it horizontally aligned */
   margin: 10px;
   font-size: 100px;
 }
 
-.timeunit-label {
+.time-unit-label {
   font-size: 14px;
   opacity: 0.8;
 }
@@ -83,7 +83,6 @@ input {
 }
 
 #error-message {
-  visibility: hidden;
   color: #ff7070;
   margin-top: 5px;
   font-size: 12px;

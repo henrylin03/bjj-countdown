@@ -13,15 +13,15 @@
 
     <main>
         <section id="countdown-timer">
-            <h2 id="competition-name"></h2>
-            <div class="timeunit" id="days">00</div>
-            <small class="timeunit-label">days</small>
-            <div class="timeunit" id="hours">00</div>
-            <small class="timeunit-label">hrs</small>
-            <div class="timeunit" id="minutes">00</div>
-            <small class="timeunit-label">mins</small>
-            <div class="timeunit" id="seconds">00</div>
-            <small class="timeunit-label">secs</small>
+            <h2 id="competition-name-display"></h2>
+            <div class="time-unit" id="days">00</div>
+            <small class="time-unit-label">days</small>
+            <div class="time-unit" id="hours">00</div>
+            <small class="time-unit-label">hrs</small>
+            <div class="time-unit" id="minutes">00</div>
+            <small class="time-unit-label">mins</small>
+            <div class="time-unit" id="seconds">00</div>
+            <small class="time-unit-label">secs</small>
         </section>
 
         <section id="next-competition">
@@ -32,7 +32,7 @@
                 <label for="competition-name-input">Competition Name:</label>
                 <input id="competition-name-input" name="competition-name" type="text">
                 <br>
-                <button id="submit-button" disabled>Start Countdown</button>
+                <input type="button" id="submit-button" value="Start Countdown"></input>
                 <div id="error-message"></div>
             </form>
         </section>
