@@ -22,10 +22,10 @@ main {
 
 #countdown-timer {
   text-align: center;
-  padding: 25px;
+  padding: 10px;
   background-color: lightgray;
-  width: 900px;
   margin: 0 auto;
+  /* width: 65vw; */
   margin-bottom: 20px;
 }
 
@@ -36,11 +36,11 @@ main {
 .time-unit {
   display: inline-block; /* this makes it horizontally aligned */
   margin: 10px;
-  font-size: 100px;
+  font-size: 6vw;
 }
 
 .time-unit-label {
-  font-size: 14px;
+  font-size: 1.2vw;
   opacity: 0.8;
 }
 
