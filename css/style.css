@@ -86,11 +86,6 @@ input {
   background-color: #ff7f00;
 }
 
-#start-countdown-button:disabled {
-  background-color: lightgrey;
-  cursor: not-allowed;
-}
-
 #error-message {
   color: #ff7070;
   margin-top: 5px;
