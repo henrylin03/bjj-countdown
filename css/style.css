@@ -52,25 +52,6 @@ main {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 1000px) {
-  #countdown-timer {
-    margin: 1px;
-    padding: 1px;
-  }
-
-  #countdown-timer h2 {
-    font-size: 4vw;
-  }
-
-  #countdown-timer .time-unit {
-    font-size: 8vw;
-  }
-
-  #countdown-timer .time-unit-label {
-    font-size: 2vw;
-  }
-}
-
 #next-competition {
   margin-top: 30px;
   line-height: 2;
@@ -125,4 +106,24 @@ footer {
 
 footer a {
   color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  #countdown-timer {
+    margin: 1px;
+    padding: 1px;
+  }
+
+  #countdown-timer h2 {
+    font-size: 4vw;
+    padding: 5px;
+  }
+
+  #countdown-timer .time-unit {
+    font-size: 8vw;
+  }
+
+  #countdown-timer .time-unit-label {
+    font-size: 2vw;
+  }
 }
