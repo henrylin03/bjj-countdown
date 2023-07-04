@@ -69,7 +69,8 @@ label {
 
 input {
   padding: 5px;
-  width: 200px;
+  margin: 10px;
+  width: 250px;
 }
 
 #start-countdown-button {
@@ -125,5 +126,32 @@ footer a {
 
   #countdown-timer .time-unit-label {
     font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.3vw;
+  }
+
+  label {
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #competition-date {
+    margin-bottom: 10px;
+  }
+
+  #competition-name-input {
+    margin-bottom: 0px;
+  }
+
+  #start-countdown-button {
+    margin: 1px;
   }
 }
