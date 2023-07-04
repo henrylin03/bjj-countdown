@@ -22,9 +22,9 @@ main {
 
 #countdown-timer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   background-color: lightgray;
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
