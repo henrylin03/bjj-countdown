@@ -40,11 +40,12 @@ const startCountdown = () => {
   // function to calculate and update time until competition
   const findAndUpdateTimeUntilCompetition = () => {
     const now = new Date().getTime();
-    const competitionDate = new Date(compDateValue).getTime();
+    const competitionDate = new Date(compDateValue);
+    const yearInput = competitionDate.getFullYear();
     const timeUntilCompetition = competitionDate - now;
 
-    if (timeUntilCompetition < 0) {
-      errorMessage.textContent = "Please select a date in the future";
+    if (timeUntilCompetition < 0 || yearInput.toString().length > 4) {
+      errorMessage.textContent = "Please select a valid date in the future";
       clearInterval(countdownInterval);
 
       // clear #countdown-timer section
