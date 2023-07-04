@@ -17,31 +17,58 @@ header {
 }
 
 main {
-  padding: 20px;
+  padding: 10px;
 }
 
 #countdown-timer {
-  text-align: center;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
   background-color: lightgray;
   margin: 0 auto;
-  /* width: 65vw; */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #countdown-timer h2 {
-  font-size: 24px;
+  font-size: 2vw;
+}
+
+#time-units-container {
+  display: flex; /* Use flexbox to arrange .time-unit elements */
+  justify-content: center; /* Center .time-unit elements horizontally */
+  align-items: center; /* Center .time-unit elements vertically */
 }
 
 .time-unit {
-  display: inline-block; /* this makes it horizontally aligned */
-  margin: 10px;
-  font-size: 6vw;
+  display: inline-block;
+  margin: 20px;
+  font-size: 8vw;
 }
 
 .time-unit-label {
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 1000px) {
+  #countdown-timer {
+    margin: 1px;
+    padding: 1px;
+  }
+
+  #countdown-timer h2 {
+    font-size: 4vw;
+  }
+
+  #countdown-timer .time-unit {
+    font-size: 8vw;
+  }
+
+  #countdown-timer .time-unit-label {
+    font-size: 2vw;
+  }
 }
 
 #next-competition {
