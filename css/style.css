@@ -36,9 +36,9 @@ main {
 }
 
 #time-units-container {
-  display: flex; /* Use flexbox to arrange .time-unit elements */
-  justify-content: center; /* Center .time-unit elements horizontally */
-  align-items: center; /* Center .time-unit elements vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .time-unit {
