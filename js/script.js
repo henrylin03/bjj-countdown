@@ -1,4 +1,3 @@
-// get elements from DOM
 const timeUnitElements = document.getElementsByClassName("time-unit");
 const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");
@@ -19,7 +18,7 @@ let countdownInterval;
 // function to add leading zeroes to single-digit numbers
 const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
-//function to title case the competition name
+// function to title case the competition name
 const titleCase = (str) =>
   str
     .toLowerCase()
@@ -27,61 +26,18 @@ const titleCase = (str) =>
     .map((word) => word.replace(word[0], word[0].toUpperCase()))
     .join(" ");
 
-// event handler to update the #countdown-timer section
-const startCountdown = () => {
-  const compNameValue = competitionNameInputElement.value;
-  const compDateValue = competitionDateInputElement.value;
-
-  // if countdown already occurring, clear (otherwise, the countdown timer will flash)
-  if (countdownInterval) {
-    clearInterval(countdownInterval);
-  }
-
-  // function to calculate and update time until competition
-  const findAndUpdateTimeUntilCompetition = () => {
-    const now = new Date().getTime();
-    const competitionDate = new Date(compDateValue);
-    const yearInput = competitionDate.getFullYear();
-
-    // sets time as midnight of date
-    competitionDate.setHours(0, 0, 0, 0);
-    const timeUntilCompetition = competitionDate - now;
-
-    if (timeUntilCompetition < 0 || yearInput.toString().length > 4) {
-      errorMessage.textContent = "Please select a valid date in the future";
-      clearInterval(countdownInterval);
-
-      // clear #countdown-timer section
-      competitionNameDisplay.textContent = "";
-      for (const timeUnit of timeUnitElements) {
-        timeUnit.textContent = "00";
-      }
-
-      return;
-    }
-    errorMessage.textContent = "";
-
-    competitionNameDisplay.textContent = compNameValue;
-
-    const days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (timeUntilCompetition % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor(
-      (timeUntilCompetition % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    const seconds = Math.floor((timeUntilCompetition % (1000 * 60)) / 1000);
-
-    // display time
-    daysElement.textContent = addLeadingZeroes(days);
-    hoursElement.textContent = addLeadingZeroes(hours);
-    minutesElement.textContent = addLeadingZeroes(minutes);
-    secondsElement.textContent = addLeadingZeroes(seconds);
-  };
-
-  // repeatedly call function to update countdown every second (1000 ms)
-  countdownInterval = setInterval(findAndUpdateTimeUntilCompetition, 1000);
+// function to find stored countdown data
+const getStoredCountdownData = () => {
+  const storedCountdownData = localStorage.getItem("countdownData");
+  return JSON.parse(storedCountdownData);
 };
 
-// add event listener when submit button clicks
-startCountdownButton.addEventListener("click", startCountdown);
+// let storedCountdownObject = getStoredCountdownData();
+// if (storedCountdownObject.competitionDate) {
+//   countdownObject = storedCountdownObject;
+// } else {
+//   countdownObject
+// }
+
+// on user click, then set countdown object
+// once countdown object set, then start countdown
