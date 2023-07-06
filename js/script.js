@@ -76,7 +76,7 @@ const startCountdown = (countdownData) => {
     }
 
     errorMessage.textContent = "";
-    competitionNameDisplay.textContent = countdownData.name;
+    competitionNameDisplay.textContent = titleCase(countdownData.name);
 
     const days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
