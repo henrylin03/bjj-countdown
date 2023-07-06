@@ -42,6 +42,9 @@ const startCountdown = () => {
     const now = new Date().getTime();
     const competitionDate = new Date(compDateValue);
     const yearInput = competitionDate.getFullYear();
+
+    // sets time as midnight of date
+    competitionDate.setHours(0, 0, 0, 0);
     const timeUntilCompetition = competitionDate - now;
 
     if (timeUntilCompetition < 0 || yearInput.toString().length > 4) {
