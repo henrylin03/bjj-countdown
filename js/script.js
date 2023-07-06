@@ -103,4 +103,6 @@ startCountdownButton.addEventListener("click", storeCountdownData);
 const storedCountdownObject = getStoredCountdownData();
 if (storedCountdownObject) {
   startCountdown(storedCountdownObject);
+  competitionDateInputElement.value = storedCountdownObject.date;
+  competitionNameInputElement.value = storedCountdownObject.name;
 }
