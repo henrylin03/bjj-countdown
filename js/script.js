@@ -27,33 +27,22 @@ const titleCase = (str) =>
     .join(" ");
 
 // function to store countdown data
-const storeCountdownData = () => {
+const storeCountdownData = (countdownDataObj) => {
   localStorage.clear();
-
-  countdownDataForStoring = {
-    date: competitionDateInputElement.value,
-    name: competitionNameInputElement.value,
-  };
-
-  localStorage.setItem(
-    "storedCountdownData",
-    JSON.stringify(countdownDataForStoring)
-  );
+  localStorage.setItem("storedCountdownData", JSON.stringify(countdownDataObj));
 };
 
-// function to find stored countdown data
+// function to find stored countdown data, if the date of countdown data is not null
 const getStoredCountdownData = () => {
   const retrievedData = localStorage.getItem("storedCountdownData");
 
-  if (!retrievedData) {
-    return;
-  }
+  if (retrievedData) {
+    const storedCountdownObject = JSON.parse(retrievedData);
 
-  const storedCountdownObject = JSON.parse(retrievedData);
-
-  if (storedCountdownObject.date) {
-    console.log("Previous data found: ", storedCountdownObject);
-    return storedCountdownObject;
+    if (storedCountdownObject.date) {
+      console.log("Previous data found: ", storedCountdownObject);
+      return storedCountdownObject;
+    }
   }
 };
 
@@ -98,13 +87,25 @@ const startCountdown = (countdownData) => {
 };
 
 // run script
-startCountdownButton.addEventListener("click", storeCountdownData);
-
 const storedCountdownObject = getStoredCountdownData();
+
 if (storedCountdownObject) {
   startCountdown(storedCountdownObject);
   competitionDateInputElement.value = storedCountdownObject.date;
   competitionNameInputElement.value = storedCountdownObject.name;
 } else {
-  pass;
+  startCountdownButton.addEventListener("click", () => {
+    const inputtedCountdownObject = {
+      date: competitionDateInputElement.value,
+      name: competitionNameInputElement.value,
+    };
+
+    startCountdown(inputtedCountdownObject);
+
+    // store in local storage, replacing previously stored data
+    storeCountdownData(inputtedCountdownObject);
+
+    competitionDateInputElement.value = inputtedCountdownObject.date;
+    competitionNameInputElement.value = inputtedCountdownObject.name;
+  });
 }
