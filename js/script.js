@@ -14,6 +14,7 @@ const startCountdownButton = document.getElementById("start-countdown-button");
 const errorMessage = document.getElementById("error-message");
 
 let countdownInterval;
+let countdownObject = {};
 
 // function to add leading zeroes to single-digit numbers
 const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
@@ -26,18 +27,31 @@ const titleCase = (str) =>
     .map((word) => word.replace(word[0], word[0].toUpperCase()))
     .join(" ");
 
-// function to find stored countdown data
-const getStoredCountdownData = () => {
-  const storedCountdownData = localStorage.getItem("countdownData");
-  return JSON.parse(storedCountdownData);
+// function to store countdown data
+const storeCountdownData = () => {
+  countdownDataForStoring = {
+    date: competitionDateInputElement.value,
+    name: competitionNameInputElement.value,
+  };
+
+  console.log(countdownDataForStoring);
+
+  localStorage.setItem("storedCountdownData", countdownDataForStoring);
+  console.log(localStorage);
 };
 
-// let storedCountdownObject = getStoredCountdownData();
-// if (storedCountdownObject.competitionDate) {
-//   countdownObject = storedCountdownObject;
-// } else {
-//   countdownObject
-// }
+// function to find stored countdown data
+const getStoredCountdownData = () => {
+  const storedCountdownObject = localStorage.getItem("storedCountdownData");
+  console.log(storedCountdownObject);
 
-// on user click, then set countdown object
-// once countdown object set, then start countdown
+  if (storedCountdownObject.date) {
+    console.log(`Previous data found: ${storedCountdownObject}`);
+    return storedCountdownObject;
+  }
+
+  console.log(`Previous data not found`);
+};
+
+startCountdownButton.addEventListener("click", storeCountdownData);
+getStoredCountdownData();
