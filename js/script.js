@@ -29,28 +29,33 @@ const titleCase = (str) =>
 
 // function to store countdown data
 const storeCountdownData = () => {
+  localStorage.clear();
+
   countdownDataForStoring = {
     date: competitionDateInputElement.value,
     name: competitionNameInputElement.value,
   };
 
-  console.log(countdownDataForStoring);
-
-  localStorage.setItem("storedCountdownData", countdownDataForStoring);
-  console.log(localStorage);
+  localStorage.setItem(
+    "storedCountdownData",
+    JSON.stringify(countdownDataForStoring)
+  );
 };
 
 // function to find stored countdown data
 const getStoredCountdownData = () => {
-  const storedCountdownObject = localStorage.getItem("storedCountdownData");
-  console.log(storedCountdownObject);
-
-  if (storedCountdownObject.date) {
-    console.log(`Previous data found: ${storedCountdownObject}`);
-    return storedCountdownObject;
+  const retrievedData = localStorage.getItem("storedCountdownData");
+  if (!retrievedData) {
+    console.log("Previous data not found");
+    return;
   }
 
-  console.log(`Previous data not found`);
+  const storedCountdownObject = JSON.parse(retrievedData);
+
+  if (storedCountdownObject.date) {
+    console.log("Previous data found: ", storedCountdownObject);
+    return storedCountdownObject;
+  }
 };
 
 startCountdownButton.addEventListener("click", storeCountdownData);
