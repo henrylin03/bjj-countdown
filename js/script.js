@@ -10,7 +10,6 @@ const competitionNameDisplay = document.getElementById(
   "competition-name-display"
 );
 const competitionForm = document.getElementById("next-competition-form");
-const startCountdownButton = document.getElementById("start-countdown-button");
 const errorMessage = document.getElementById("error-message");
 
 let countdownInterval;
