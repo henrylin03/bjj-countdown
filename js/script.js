@@ -1,5 +1,3 @@
-// get elements from DOM
-const timeUnitElements = document.getElementsByClassName("time-unit");
 const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
@@ -19,49 +17,59 @@ let countdownInterval;
 // function to add leading zeroes to single-digit numbers
 const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
-//function to title case the competition name
+// function to title case the competition name
 const titleCase = (str) =>
   str
+    .replace(/\s\s+/g, " ") // replaces all tabs, newlines etc with " " (single space)
     .toLowerCase()
     .split(" ")
     .map((word) => word.replace(word[0], word[0].toUpperCase()))
     .join(" ");
 
-// event handler to update the #countdown-timer section
-const startCountdown = () => {
-  const compNameValue = competitionNameInputElement.value;
-  const compDateValue = competitionDateInputElement.value;
+// function to store countdown data
+const storeInputtedCountdownData = () => {
+  const inputtedCountdownObject = {
+    date: competitionDateInputElement.value,
+    name: competitionNameInputElement.value,
+  };
+  localStorage.setItem(
+    "storedCountdownData",
+    JSON.stringify(inputtedCountdownObject)
+  );
+};
 
-  // if countdown already occurring, clear (otherwise, the countdown timer will flash)
+// function to find stored countdown data, if the date of countdown data is not null
+const getStoredCountdownData = () => {
+  const retrievedData = localStorage.getItem("storedCountdownData");
+
+  if (retrievedData) {
+    const storedCountdownObject = JSON.parse(retrievedData);
+
+    if (storedCountdownObject.date) {
+      console.log("Previous data found: ", storedCountdownObject);
+      return storedCountdownObject;
+    }
+  }
+};
+
+// function to countdown repeatedly
+const startCountdown = (countdownData) => {
+  const competitionDateObject = new Date(countdownData.date);
+
+  competitionNameDisplay.textContent = titleCase(countdownData.name);
+
+  // clears previous countdown
   if (countdownInterval) {
     clearInterval(countdownInterval);
   }
 
   // function to calculate and update time until competition
   const findAndUpdateTimeUntilCompetition = () => {
-    const now = new Date().getTime();
-    const competitionDate = new Date(compDateValue);
-    const yearInput = competitionDate.getFullYear();
+    let currentTimeLooped = new Date().getTime();
 
     // sets time as midnight of date
-    competitionDate.setHours(0, 0, 0, 0);
-    const timeUntilCompetition = competitionDate - now;
-
-    if (timeUntilCompetition < 0 || yearInput.toString().length > 4) {
-      errorMessage.textContent = "Please select a valid date in the future";
-      clearInterval(countdownInterval);
-
-      // clear #countdown-timer section
-      competitionNameDisplay.textContent = "";
-      for (const timeUnit of timeUnitElements) {
-        timeUnit.textContent = "00";
-      }
-
-      return;
-    }
-    errorMessage.textContent = "";
-
-    competitionNameDisplay.textContent = compNameValue;
+    competitionDateObject.setHours(0, 0, 0, 0);
+    let timeUntilCompetition = competitionDateObject - currentTimeLooped;
 
     const days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
@@ -79,9 +87,40 @@ const startCountdown = () => {
     secondsElement.textContent = addLeadingZeroes(seconds);
   };
 
-  // repeatedly call function to update countdown every second (1000 ms)
   countdownInterval = setInterval(findAndUpdateTimeUntilCompetition, 1000);
 };
 
-// add event listener when submit button clicks
-startCountdownButton.addEventListener("click", startCountdown);
+const buttonEventHandler = () => {
+  const inputtedCountdownObject = {
+    date: competitionDateInputElement.value,
+    name: competitionNameInputElement.value,
+  };
+
+  let now = new Date().getTime();
+  const inputtedDateObject = new Date(inputtedCountdownObject.date);
+  const inputtedYear = inputtedDateObject.getFullYear();
+
+  // check for invalid competition date values
+  if (inputtedDateObject < now || inputtedYear.toString().length > 4) {
+    errorMessage.textContent = "Please select a valid date in the future";
+    return;
+  }
+
+  errorMessage.textContent = ""; // remove error message
+  localStorage.clear();
+  startCountdown(inputtedCountdownObject);
+  competitionDateInputElement.value = inputtedCountdownObject.date;
+  competitionNameInputElement.value = inputtedCountdownObject.name;
+  storeInputtedCountdownData();
+};
+
+// run script
+const storedCountdownObject = getStoredCountdownData();
+
+if (storedCountdownObject) {
+  startCountdown(storedCountdownObject);
+  competitionDateInputElement.value = storedCountdownObject.date;
+  competitionNameInputElement.value = storedCountdownObject.name;
+}
+
+startCountdownButton.addEventListener("click", buttonEventHandler);
