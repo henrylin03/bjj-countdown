@@ -49,7 +49,6 @@ const getStoredCountdownData = () => {
     const storedCountdownObject = JSON.parse(retrievedData);
 
     if (storedCountdownObject.date) {
-      console.log("Previous data found: ", storedCountdownObject);
       return storedCountdownObject;
     }
   }
