@@ -9,6 +9,7 @@ const competitionNameInputElement = document.getElementById(
 const competitionNameDisplay = document.getElementById(
   "competition-name-display"
 );
+const competitionForm = document.getElementById("next-competition-form");
 const startCountdownButton = document.getElementById("start-countdown-button");
 const errorMessage = document.getElementById("error-message");
 
@@ -93,7 +94,10 @@ const startCountdown = (countdownData) => {
   countdownInterval = setInterval(findAndUpdateTimeUntilCompetition, 1000);
 };
 
-const buttonEventHandler = () => {
+const buttonEventHandler = (event) => {
+  // prevent default submission behaviour
+  event.preventDefault();
+
   const inputtedCountdownObject = {
     date: competitionDateInputElement.value,
     name: competitionNameInputElement.value,
@@ -126,4 +130,4 @@ if (storedCountdownObject) {
   competitionNameInputElement.value = storedCountdownObject.name;
 }
 
-startCountdownButton.addEventListener("click", buttonEventHandler);
+competitionForm.addEventListener("submit", buttonEventHandler);
