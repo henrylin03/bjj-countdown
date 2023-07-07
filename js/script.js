@@ -9,7 +9,7 @@ const competitionNameInputElement = document.getElementById(
 const competitionNameDisplay = document.getElementById(
   "competition-name-display"
 );
-const startCountdownButton = document.getElementById("start-countdown-button");
+const competitionForm = document.getElementById("next-competition-form");
 const errorMessage = document.getElementById("error-message");
 
 let countdownInterval;
@@ -20,10 +20,13 @@ const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 // function to title case the competition name
 const titleCase = (str) =>
   str
-    .replace(/\s\s+/g, " ") // replaces all tabs, newlines etc with " " (single space)
+    .trim()
+    .replace(/\s\s+/g, " ")
     .toLowerCase()
     .split(" ")
-    .map((word) => word.replace(word[0], word[0].toUpperCase()))
+    .map((word) =>
+      word.length ? word.replace(word[0], word[0].toUpperCase()) : ""
+    )
     .join(" ");
 
 // function to store countdown data
@@ -46,7 +49,6 @@ const getStoredCountdownData = () => {
     const storedCountdownObject = JSON.parse(retrievedData);
 
     if (storedCountdownObject.date) {
-      console.log("Previous data found: ", storedCountdownObject);
       return storedCountdownObject;
     }
   }
@@ -90,7 +92,10 @@ const startCountdown = (countdownData) => {
   countdownInterval = setInterval(findAndUpdateTimeUntilCompetition, 1000);
 };
 
-const buttonEventHandler = () => {
+const handleFormSubmit = (event) => {
+  // prevent default submission behavior
+  event.preventDefault();
+
   const inputtedCountdownObject = {
     date: competitionDateInputElement.value,
     name: competitionNameInputElement.value,
@@ -123,4 +128,4 @@ if (storedCountdownObject) {
   competitionNameInputElement.value = storedCountdownObject.name;
 }
 
-startCountdownButton.addEventListener("click", buttonEventHandler);
+competitionForm.addEventListener("submit", handleFormSubmit);
