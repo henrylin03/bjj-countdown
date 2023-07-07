@@ -20,10 +20,13 @@ const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 // function to title case the competition name
 const titleCase = (str) =>
   str
-    .replace(/\s\s+/g, " ") // replaces all tabs, newlines etc with " " (single space)
+    .trim()
+    .replace(/\s\s+/g, " ")
     .toLowerCase()
     .split(" ")
-    .map((word) => word.replace(word[0], word[0].toUpperCase()))
+    .map((word) =>
+      word.length > 0 ? word.replace(word[0], word[0].toUpperCase()) : ""
+    )
     .join(" ");
 
 // function to store countdown data
