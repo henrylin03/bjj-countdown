@@ -31,8 +31,9 @@ main {
   margin-bottom: 10px;
 }
 
-#countdown-timer h2 {
-  font-size: 2vw;
+#competition-name-display {
+  font-size: 3vw;
+  padding-bottom: 20px;
 }
 
 #time-units-container {
@@ -104,15 +105,15 @@ footer a {
   color: #fff;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1090px) {
   #countdown-timer {
     margin: 1px;
     padding: 1px;
   }
 
-  #countdown-timer h2 {
+  #competition-name-display {
     font-size: 4vw;
-    padding: 5px;
+    padding: 10px;
   }
 
   #countdown-timer .time-unit {
@@ -124,7 +125,12 @@ footer a {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 870px) {
+  #competition-name-display {
+    font-size: 4vw;
+    padding: 5px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
