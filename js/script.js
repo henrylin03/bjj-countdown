@@ -92,8 +92,8 @@ const startCountdown = (countdownData) => {
   countdownInterval = setInterval(findAndUpdateTimeUntilCompetition, 1000);
 };
 
-const buttonEventHandler = (event) => {
-  // prevent default submission behaviour
+const handleFormSubmit = (event) => {
+  // prevent default submission behavior
   event.preventDefault();
 
   const inputtedCountdownObject = {
@@ -128,4 +128,4 @@ if (storedCountdownObject) {
   competitionNameInputElement.value = storedCountdownObject.name;
 }
 
-competitionForm.addEventListener("submit", buttonEventHandler);
+competitionForm.addEventListener("submit", handleFormSubmit);
