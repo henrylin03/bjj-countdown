@@ -56,6 +56,8 @@ const getStoredCountdownData = () => {
 const startCountdown = (countdownData) => {
   const competitionDateObject = new Date(countdownData.date);
 
+  competitionNameDisplay.textContent = titleCase(countdownData.name);
+
   // clears previous countdown
   if (countdownInterval) {
     clearInterval(countdownInterval);
@@ -68,10 +70,6 @@ const startCountdown = (countdownData) => {
     // sets time as midnight of date
     competitionDateObject.setHours(0, 0, 0, 0);
     let timeUntilCompetition = competitionDateObject - currentTimeLooped;
-
-    errorMessage.textContent = "";
-
-    competitionNameDisplay.textContent = titleCase(countdownData.name);
 
     const days = Math.floor(timeUntilCompetition / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
@@ -108,6 +106,7 @@ const buttonEventHandler = () => {
     return;
   }
 
+  errorMessage.textContent = ""; // remove error message
   localStorage.clear();
   startCountdown(inputtedCountdownObject);
   competitionDateInputElement.value = inputtedCountdownObject.date;
