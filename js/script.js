@@ -24,9 +24,7 @@ const titleCase = (str) =>
     .replace(/\s\s+/g, " ")
     .toLowerCase()
     .split(" ")
-    .map((word) =>
-      word.length ? word.replace(word[0], word[0].toUpperCase()) : ""
-    )
+    .map((word) => (word ? word.replace(word[0], word[0].toUpperCase()) : ""))
     .join(" ");
 
 // function to store countdown data
