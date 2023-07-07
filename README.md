@@ -2,19 +2,13 @@
 
 👋 Welcome to my countdown web application! This project showcases my front-end skills in HTML, CSS, and JavaScript. It's a fun and useful way to track your upcoming Brazilian Jiu-Jitsu (BJJ) competitions. Just enter the date and name of your next competition, and let the countdown begin! ⏳🥋
 
-## Key Skills / Technologies Used
+## Technologies Used
 
 🌟 **HTML**: to create a well-structured and semantic web page.
 
 🎨 **CSS**: deliver aesthetically pleasing and responsive design, ensuring optimal user experience across various devices.
 
 💻 **JavaScript**: implemented interactive features including user input validation, countdown calculations, and dynamic updates to the DOM.
-
-## Features
-
-✨ User-friendly interface
-
-🕒 Real-time countdown timer
 
 ## How to Use
 
