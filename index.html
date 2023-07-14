@@ -2,33 +2,45 @@
 
 <head>
     <link href="css/style.css" rel="stylesheet">
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CompDay Countdown</title>
+    <title>BJJ Countdown</title>
 </head>
 
 <body>
     <header>
-        <h1>CompDay Countdown</h1>
-        <p id="subtitle">Countdown to your next BJJ (Brazilian Jiujitsu) competition</p>
+        <figure>
+            <img src="./img/gi.png" id="header-icon">
+        </figure>
     </header>
 
     <main>
         <section id="countdown-timer">
             <h2 id="competition-name-display"></h2>
-            <article id="time-units-container">
+            <article id="days-container" class="time-unit-container">
                 <div class="time-unit" id="days">00</div>
                 <small class="time-unit-label">days</small>
-                <div class="time-unit" id="hours">00</div>
-                <small class="time-unit-label">hrs</small>
-                <div class="time-unit" id="minutes">00</div>
-                <small class="time-unit-label">mins</small>
-                <div class="time-unit" id="seconds">00</div>
-                <small class="time-unit-label">secs</small>
             </article>
+            <div class="separator">:</div>
+            <article id="hours-container" class="time-unit-container">
+                <div class="time-unit" id="hours">00</div>
+                <small class="time-unit-label">hours</small>
+            </article>
+            <div class="separator">:</div>
+            <article id="minutes-container" class="time-unit-container">
+                <div class="time-unit" id="minutes">00</div>
+                <small class="time-unit-label">minutes</small>
+            </article>
+            <div class="separator">:</div>
+            <article id="seconds-container" class="seconds-container">
+                <div class="time-unit" id="seconds">00</div>
+                <small class="time-unit-label">seconds</small>
+            </article>
+
         </section>
 
         <section id="next-competition">
-            <p>Please enter the details of your next competition</p>
+            <h3>Next Competition</h3>
             <form id="next-competition-form">
                 <label for="competition-date">Competition Date</label>
                 <input id="competition-date" name="competition-date" type="date" required>
@@ -42,8 +54,9 @@
     </main>
 
     <footer>
-        <p>This countdown timer is open source and available on <a
-                href="https://github.com/henrylin03/compday-countdown" target="_blank">GitHub</a>.</p>
+        <figure>
+            <img src="./img/github.png" id="github-icon">
+        </figure>
     </footer>
 
     <script src="./js/script.js"></script>
