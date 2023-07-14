@@ -31,7 +31,7 @@ body {
 #competition-name-display {
   font-family: "Sifonn", sans-serif;
   color: #f1e9da;
-  font-size: 40px;
+  font-size: 50px;
   text-transform: uppercase;
   padding: 30px 0px 10px;
 }
@@ -58,4 +58,22 @@ body {
 .time-unit-label {
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
+}
+
+#next-competition h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #f1e9da;
+  padding-top: 35px;
+  padding-bottom: 15px;
+}
+
+input {
+  margin: 15px 10px;
+  padding: 10px;
+}
+
+#start-countdown-button {
+  padding: 10px 35px;
+  background-color: #f1e9da;
 }
