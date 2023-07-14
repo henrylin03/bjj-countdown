@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f1e9da;
 }
 
 @font-face {
@@ -10,22 +9,47 @@
   src: url("/fonts/sifonn.otf") format("opentype");
 }
 
+header {
+  padding: 35px;
+}
+
 body {
+  background-color: #2e294e;
   text-align: center;
+}
+
+#countdown-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #907f9f;
+  width: 1500px;
+  margin: 0 auto;
 }
 
 #competition-name-display {
   font-family: "Sifonn", sans-serif;
+  color: #f1e9da;
   font-size: 40px;
   text-transform: uppercase;
+  padding: 30px;
 }
 
-#time-units {
+#time-units-and-labels {
+  display: flex;
+  align-items: center;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 40px;
+  font-size: 80px;
+}
+
+.time-units-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .time-unit-label {
   font-size: 20px;
-  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Montserrat", sans-serif;
 }
