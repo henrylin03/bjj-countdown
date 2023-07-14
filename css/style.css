@@ -74,6 +74,8 @@ input {
 }
 
 #start-countdown-button {
-  padding: 10px 35px;
+  padding: 20px 45px;
+  font-family: "Sifonn", sans-serif;
   background-color: #f1e9da;
+  color: #2e294e;
 }
