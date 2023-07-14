@@ -3,6 +3,10 @@
 <head>
     <link href="css/style.css" rel="stylesheet">
     <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BJJ Countdown</title>
 </head>
@@ -17,37 +21,36 @@
     <main>
         <section id="countdown-timer">
             <h2 id="competition-name-display"></h2>
-            <article id="days-container" class="time-unit-container">
-                <div class="time-unit" id="days">00</div>
-                <small class="time-unit-label">days</small>
+            <article id="time-units">
+                <article id="days-container" class="time-unit-container">
+                    <div class="time-unit" id="days">00</div>
+                    <small class="time-unit-label">days</small>
+                </article>
+                <div class="separator">:</div>
+                <article id="hours-container" class="time-unit-container">
+                    <div class="time-unit" id="hours">00</div>
+                    <small class="time-unit-label">hours</small>
+                </article>
+                <div class="separator">:</div>
+                <article id="minutes-container" class="time-unit-container">
+                    <div class="time-unit" id="minutes">00</div>
+                    <small class="time-unit-label">minutes</small>
+                </article>
+                <div class="separator">:</div>
+                <article id="seconds-container" class="time-unit-container">
+                    <div class="time-unit" id="seconds">00</div>
+                    <small class="time-unit-label">seconds</small>
+                </article>
             </article>
-            <div class="separator">:</div>
-            <article id="hours-container" class="time-unit-container">
-                <div class="time-unit" id="hours">00</div>
-                <small class="time-unit-label">hours</small>
-            </article>
-            <div class="separator">:</div>
-            <article id="minutes-container" class="time-unit-container">
-                <div class="time-unit" id="minutes">00</div>
-                <small class="time-unit-label">minutes</small>
-            </article>
-            <div class="separator">:</div>
-            <article id="seconds-container" class="seconds-container">
-                <div class="time-unit" id="seconds">00</div>
-                <small class="time-unit-label">seconds</small>
-            </article>
-
         </section>
 
         <section id="next-competition">
             <h3>Next Competition</h3>
             <form id="next-competition-form">
-                <label for="competition-date">Competition Date</label>
-                <input id="competition-date" name="competition-date" type="date" required>
-                <label for="competition-name-input">Competition Name</label>
-                <input id="competition-name-input" name="competition-name" type="text">
+                <input id="competition-date" name="competition-date" type="date" placeholder="Date" required>
+                <input id="competition-name-input" name="competition-name" type="text" placeholder="Name">
                 <br>
-                <input type="submit" id="start-countdown-button" value="Start Countdown"></input>
+                <input type="submit" id="start-countdown-button" value="Start"></input>
                 <div id="error-message"></div>
             </form>
         </section>
@@ -55,7 +58,8 @@
 
     <footer>
         <figure>
-            <img src="./img/github.png" id="github-icon" height="32">
+            <a href="https://github.com/henrylin03/compday-countdown" target="_blank"><img src="./img/github.png"
+                    id="github-icon" height="32"></a>
         </figure>
     </footer>
 

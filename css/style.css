@@ -5,6 +5,27 @@
   background-color: #f1e9da;
 }
 
+@font-face {
+  font-family: "Sifonn";
+  src: url("/fonts/sifonn.otf") format("opentype");
+}
+
 body {
   text-align: center;
+}
+
+#competition-name-display {
+  font-family: "Sifonn", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+#time-units {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+}
+
+.time-unit-label {
+  font-size: 20px;
+  /* font-family: "Montserrat", sans-serif; */
 }
