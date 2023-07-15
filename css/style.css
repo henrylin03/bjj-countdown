@@ -32,7 +32,7 @@ body {
 
 #competition-name-display {
   font-family: "Sifonn", sans-serif;
-  color: #f1e9da;
+  color: #e3dee3;
   font-size: 50px;
   text-transform: uppercase;
   padding: 30px 0px 10px;
@@ -70,7 +70,7 @@ body {
 
 #next-competition h3 {
   font-size: 26px;
-  color: #f1e9da;
+  color: #e3dee3;
   padding-top: 35px;
   padding-bottom: 30px;
   margin: 0 auto;
@@ -121,7 +121,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   font-size: 25px;
-  background-color: #bbb0bf;
+  background-color: #e3dee3;
   color: black;
   margin-top: 0px;
   cursor: pointer;
