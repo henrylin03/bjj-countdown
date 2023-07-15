@@ -27,6 +27,7 @@ body {
   background-color: #92809a;
   width: 1700px;
   margin: 0 auto;
+  border-radius: 50px;
 }
 
 #competition-name-display {
@@ -82,6 +83,7 @@ body {
   width: 300px;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
+  border-radius: 13px;
 }
 
 #error-message {
@@ -99,6 +101,12 @@ body {
   background-color: #f1e9da;
   color: #2e294e;
   margin-top: 0px;
+  cursor: pointer;
+  border-radius: 13px;
+}
+
+#start-countdown-button:hover {
+  background-color: #f18805;
 }
 
 footer {
