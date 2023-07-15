@@ -44,10 +44,16 @@
         <section id="next-competition">
             <h3>Next Competition</h3>
             <form id="next-competition-form">
-                <input id="competition-date" name="competition-date" type="date" placeholder="Date"
-                    class="user-input-field" required>
-                <input id="competition-name-input" name="competition-name" type="text" class="user-input-field"
-                    placeholder="Name">
+                <div id="date-input-container" class="input-container">
+                    <img id="calendar-icon" class="user-input-icon" src="./img/calendar.png">
+                    <input id="competition-date-input" name="competition-date" type="date" placeholder="Date"
+                        class="user-input-field" required>
+                </div>
+                <div id="name-input-container" class="input-container">
+                    <img id="trophy-icon" class="user-input-icon" src="./img/trophy.png">
+                    <input id="competition-name-input" name="competition-name" type="text" class="user-input-field"
+                        placeholder="Name">
+                </div>
                 <p id="error-message">⚠️ Please select a valid date in the future</p>
                 <input type="submit" id="start-countdown-button" value="Start"></input>
             </form>
@@ -56,8 +62,8 @@
 
     <footer>
         <figure id="github-icon">
-            <a href="https://github.com/henrylin03/compday-countdown" target="_blank"><img
-                    src="./img/github-icon-white.jpg" width="50"></a>
+            <a href="https://github.com/henrylin03/compday-countdown" target="_blank"><img src="./img/github.png"
+                    width="75"></a>
         </figure>
     </footer>
 

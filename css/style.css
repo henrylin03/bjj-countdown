@@ -45,7 +45,7 @@ body {
   font-family: "Bebas Neue", sans-serif;
   font-size: 170px;
   padding-bottom: 25px;
-  color: #131116;
+  color: #181528;
 }
 
 .time-units-container {
@@ -72,18 +72,39 @@ body {
   font-size: 26px;
   color: #f1e9da;
   padding-top: 35px;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   margin: 0 auto;
+}
+
+.input-container {
+  display: inline-block;
+  margin-right: 100px;
+  overflow: visible;
+}
+
+.user-input-icon {
+  height: 50px;
+  padding: 8px;
+  margin-right: -4px;
+  background-color: #d9d3d9;
+  border: 4px solid #2e294e;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  vertical-align: middle;
 }
 
 .user-input-field {
   height: 50px;
-  margin: 35px 20px;
-  padding: 15px;
+  padding: 0px 15px;
+  margin-left: 0px;
   width: 300px;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  border-radius: 13px;
+  border: 4px solid #2e294e;
+  border-left: 0px;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  vertical-align: middle;
 }
 
 #error-message {
@@ -97,16 +118,20 @@ body {
 #start-countdown-button {
   height: 60px;
   width: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
   font-size: 25px;
-  background-color: #f1e9da;
-  color: #2e294e;
+  background-color: #bbb0bf;
+  color: black;
   margin-top: 0px;
   cursor: pointer;
   border-radius: 13px;
+  border: none;
 }
 
 #start-countdown-button:hover {
-  background-color: #f18805;
+  background-color: #181528;
+  color: white;
 }
 
 footer {
