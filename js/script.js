@@ -17,16 +17,6 @@ let countdownInterval;
 // function to add leading zeroes to single-digit numbers
 const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
-// function to title case the competition name
-const titleCase = (str) =>
-  str
-    .trim()
-    .replace(/\s\s+/g, " ")
-    .toLowerCase()
-    .split(" ")
-    .map((word) => (word ? word.replace(word[0], word[0].toUpperCase()) : ""))
-    .join(" ");
-
 // function to store countdown data
 const storeInputtedCountdownData = () => {
   const inputtedCountdownObject = {
@@ -55,8 +45,7 @@ const getStoredCountdownData = () => {
 // function to countdown repeatedly
 const startCountdown = (countdownData) => {
   const competitionDateObject = new Date(countdownData.date);
-
-  competitionNameDisplay.textContent = titleCase(countdownData.name);
+  competitionNameDisplay.textContent = countdownData.name;
 
   // clears previous countdown
   if (countdownInterval) {
@@ -105,11 +94,11 @@ const handleFormSubmit = (event) => {
 
   // check for invalid competition date values
   if (inputtedDateObject < now || inputtedYear.toString().length > 4) {
-    errorMessage.textContent = "Please select a valid date in the future";
+    errorMessage.style.visibility = "visible";
     return;
   }
 
-  errorMessage.textContent = ""; // remove error message
+  errorMessage.style.visibility = "hidden";
   localStorage.clear();
   startCountdown(inputtedCountdownObject);
   competitionDateInputElement.value = inputtedCountdownObject.date;

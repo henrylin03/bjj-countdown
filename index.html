@@ -44,19 +44,20 @@
         <section id="next-competition">
             <h3>Next Competition</h3>
             <form id="next-competition-form">
-                <input id="competition-date" name="competition-date" type="date" placeholder="Date" required>
-                <input id="competition-name-input" name="competition-name" type="text" placeholder="Name">
-                <br>
+                <input id="competition-date" name="competition-date" type="date" placeholder="Date"
+                    class="user-input-field" required>
+                <input id="competition-name-input" name="competition-name" type="text" class="user-input-field"
+                    placeholder="Name">
+                <p id="error-message">⚠️ Please select a valid date in the future</p>
                 <input type="submit" id="start-countdown-button" value="Start"></input>
-                <div id="error-message"></div>
             </form>
         </section>
     </main>
 
     <footer>
-        <figure>
+        <figure id="github-icon">
             <a href="https://github.com/henrylin03/compday-countdown" target="_blank"><img
-                    src="./img/github-icon-white.jpg" id="github-icon" width="50"></a>
+                    src="./img/github-icon-white.jpg" width="50"></a>
         </figure>
     </footer>
 
