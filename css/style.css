@@ -10,8 +10,7 @@
 }
 
 header {
-  padding: 35px;
-  margin: 0 auto;
+  padding: 42px;
 }
 
 body {
@@ -25,9 +24,10 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #92809a;
-  width: 1700px;
+  max-width: 80%;
   margin: 0 auto;
   border-radius: 50px;
+  text-align: center;
 }
 
 #competition-name-display {
@@ -71,7 +71,7 @@ body {
 #next-competition h3 {
   font-size: 26px;
   color: #e3dee3;
-  padding-top: 35px;
+  padding-top: 50px;
   padding-bottom: 30px;
   margin: 0 auto;
 }
