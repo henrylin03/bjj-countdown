@@ -64,6 +64,24 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+@media screen and (max-width: 1800px) {
+  #competition-name-display {
+    font-size: 3vw;
+  }
+
+  #time-units-and-labels {
+    font-size: 10vw;
+  }
+
+  .time-unit {
+    letter-spacing: 1vw;
+  }
+
+  .time-unit-label {
+    font-size: 2.3vw;
+  }
+}
+
 #next-competition {
   font-family: "Montserrat", sans-serif;
 }
