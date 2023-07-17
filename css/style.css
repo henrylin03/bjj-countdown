@@ -35,7 +35,7 @@ body {
   color: #e3dee3;
   font-size: 50px;
   text-transform: uppercase;
-  padding: 30px 0px 10px;
+  padding: 30px 0 10px;
 }
 
 #time-units-and-labels {
@@ -46,6 +46,8 @@ body {
   font-size: 170px;
   padding-bottom: 25px;
   color: #181528;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .time-units-container {
@@ -62,24 +64,6 @@ body {
 .time-unit-label {
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
-}
-
-@media screen and (max-width: 1800px) {
-  #competition-name-display {
-    font-size: 3vw;
-  }
-
-  #time-units-and-labels {
-    font-size: 10vw;
-  }
-
-  .time-unit {
-    letter-spacing: 1vw;
-  }
-
-  .time-unit-label {
-    font-size: 1.7vw;
-  }
 }
 
 #next-competition {
@@ -142,7 +126,7 @@ body {
   visibility: hidden;
   color: #f0a202;
   font-size: 19px;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 25px;
 }
 
@@ -169,7 +153,29 @@ footer {
   padding: 32px;
 }
 
+@media screen and (max-width: 1800px) {
+  #competition-name-display {
+    font-size: 3vw;
+  }
+
+  #time-units-and-labels {
+    font-size: 10vw;
+  }
+
+  .time-unit {
+    letter-spacing: 2vw;
+  }
+
+  .time-unit-label {
+    font-size: 1.7vw;
+  }
+}
+
 @media screen and (max-width: 927px) {
+  .time-units-container {
+    padding: 3vw;
+  }
+
   .time-unit-label {
     font-size: 2vw;
   }
@@ -181,5 +187,31 @@ footer {
 
   .user-input-field {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 692px) {
+  #time-units-and-labels {
+    font-size: 15vw;
+    max-width: 70%;
+  }
+
+  .time-unit {
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  #time-units-and-labels {
+    font-size: 50px;
+  }
+
+  .time-unit {
+    letter-spacing: 0;
+    font-size: 50px;
+  }
+
+  .time-unit-label {
+    font-size: 10px;
   }
 }
