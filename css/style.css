@@ -4,20 +4,18 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+@font-face {
+  font-family: "Sifonn";
+  src: url("/fonts/sifonn.otf") format("opentype");
 }
 
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 30px;
-  line-height: 1.5;
+  padding: 42px;
 }
 
-main {
-  padding: 10px;
+body {
+  background-color: #2e294e;
+  text-align: center;
 }
 
 #countdown-timer {
@@ -25,134 +23,195 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px;
-  background-color: lightgray;
+  background-color: #92809a;
+  max-width: 80%;
   margin: 0 auto;
-  margin-bottom: 10px;
+  border-radius: 50px;
+  text-align: center;
 }
 
 #competition-name-display {
-  font-size: 3vw;
-  padding-bottom: 20px;
+  font-family: "Sifonn", sans-serif;
+  color: #e3dee3;
+  font-size: 50px;
+  text-transform: uppercase;
+  padding: 30px 0 10px;
 }
 
-#time-units-container {
+#time-units-and-labels {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 170px;
+  padding-bottom: 25px;
+  color: #181528;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.time-units-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
 }
 
 .time-unit {
-  display: inline-block;
-  margin: 20px;
-  font-size: 8vw;
+  letter-spacing: 15px;
 }
 
 .time-unit-label {
-  font-size: 1.5vw;
-  opacity: 0.8;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
 }
 
 #next-competition {
-  margin-top: 30px;
-  line-height: 2;
+  font-family: "Montserrat", sans-serif;
 }
 
-form {
-  margin-top: 20px;
-  margin-bottom: 20px;
+#next-competition h3 {
+  font-size: 26px;
+  color: #e3dee3;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin: 0 auto;
 }
 
-label {
-  margin-left: 20px;
-  margin-bottom: 10px;
+#user-inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 80%;
 }
 
-input {
-  padding: 5px;
-  margin: 10px;
-  width: 250px;
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0 15px;
 }
 
-#start-countdown-button {
-  padding: 20px;
-  margin-top: 30px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.user-input-icon {
+  height: 50px;
+  padding: 8px;
+  margin-right: -4px;
+  background-color: #d9d3d9;
+  border: 3px solid #2e294e;
+  border-right: none;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  vertical-align: middle;
 }
 
-#start-countdown-button:hover {
-  background-color: #ff7f00;
+.user-input-field {
+  height: 50px;
+  padding: 12px;
+  margin-right: 0;
+  width: 300px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  border: 3px solid #2e294e;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  vertical-align: middle;
+  overflow: visible;
 }
 
 #error-message {
-  color: #ff7070;
-  margin-top: 5px;
-  font-size: 12px;
+  visibility: hidden;
+  color: #f0a202;
+  font-size: 19px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+#start-countdown-button {
+  height: 60px;
+  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+  background-color: #e3dee3;
+  color: black;
+  margin-top: 0;
+  cursor: pointer;
+  border-radius: 13px;
+  border: none;
+}
+
+#start-countdown-button:hover {
+  background-color: #181528;
+  color: white;
 }
 
 footer {
-  background-color: gray;
-  color: #fff;
-  padding: 10px;
-  font-style: italic;
-  font-size: 12px;
+  padding: 32px;
 }
 
-footer a {
-  color: #fff;
-}
-
-@media screen and (max-width: 1090px) {
-  #countdown-timer {
-    margin: 1px;
-    padding: 1px;
-  }
-
+@media screen and (max-width: 1800px) {
   #competition-name-display {
-    font-size: 4vw;
-    padding: 10px;
+    font-size: 3vw;
   }
 
-  #countdown-timer .time-unit {
-    font-size: 8vw;
+  #time-units-and-labels {
+    font-size: 10vw;
   }
 
-  #countdown-timer .time-unit-label {
+  .time-unit {
+    letter-spacing: 2vw;
+  }
+
+  .time-unit-label {
+    font-size: 1.7vw;
+  }
+}
+
+@media screen and (max-width: 927px) {
+  .time-units-container {
+    padding: 3vw;
+  }
+
+  .time-unit-label {
     font-size: 2vw;
   }
+
+  #next-competition h3 {
+    font-size: 3vw;
+    padding-bottom: 15px;
+  }
+
+  .user-input-field {
+    font-size: 15px;
+  }
 }
 
-@media screen and (max-width: 870px) {
-  #competition-name-display {
-    font-size: 4vw;
-    padding: 5px;
+@media screen and (max-width: 692px) {
+  #time-units-and-labels {
+    font-size: 15vw;
+    max-width: 70%;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.3vw;
+  .time-unit {
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  #time-units-and-labels {
+    font-size: 50px;
   }
 
-  label {
-    margin-bottom: 0px;
-    display: flex;
-    justify-content: center;
+  .time-unit {
+    letter-spacing: 0;
+    font-size: 50px;
   }
 
-  #competition-date {
-    margin-bottom: 10px;
-  }
-
-  #competition-name-input {
-    margin-bottom: 0px;
-  }
-
-  #start-countdown-button {
-    margin: 1px;
+  .time-unit-label {
+    font-size: 10px;
   }
 }
