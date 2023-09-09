@@ -97,7 +97,7 @@ body {
 }
 
 .user-input-icon {
-  height: 50px;
+  height: 60px;
   padding: 8px;
   margin-right: -4px;
   background-color: #d9d3d9;
@@ -109,17 +109,24 @@ body {
 }
 
 .user-input-field {
-  height: 50px;
+  height: 60px;
   padding: 12px;
   margin-right: 0;
   width: 300px;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
+  font-weight: bold;
+  color: #2e294e;
+  background-color: #e3dee3;
   border: 3px solid #2e294e;
   border-top-right-radius: 13px;
   border-bottom-right-radius: 13px;
   vertical-align: middle;
   overflow: visible;
+}
+
+.user-input-field:active , .user-input-field:focus{
+  outline:none ;
 }
 
 #error-message {
@@ -142,6 +149,7 @@ body {
   cursor: pointer;
   border-radius: 13px;
   border: none;
+  transition: background-color 0.1s ease-in-out,color 0.1s ease-in-out;
 }
 
 #start-countdown-button:hover {
