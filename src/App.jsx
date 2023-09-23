@@ -5,12 +5,28 @@ import CountdownTimer from "./components/CountdownTimer";
 import GithubFooter from "./components/GithubFooter";
 
 function App() {
+  const getStoredCompetition = () => {
+    const retrievedData = window.localStorage.getItem("competition-form");
+    if (retrievedData) {
+      return JSON.parse(retrievedData);
+    }
+    return;
+  };
+
+  const storedCompetition = getStoredCompetition();
+
+  // console.log(getStoredCompetition);
+  // localStorage.removeItem("competition-form");
+
   return (
     <>
-      <Stack align="center" justify="space-between">
+      <Stack align="center" gap="lg">
         <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} mt="xl" />
-        <CountdownTimer />
-        <AddCompetitionBox />
+        {storedCompetition ? (
+          <CountdownTimer storedCompetition={storedCompetition} />
+        ) : (
+          <AddCompetitionBox />
+        )}
         <GithubFooter />
       </Stack>
     </>

@@ -16,7 +16,7 @@ function DeleteCompetitionButton() {
       ),
       labels: { confirm: "Delete", cancel: "Cancel" },
       confirmProps: { color: "red" },
-      // onConfirm: () =>
+      onConfirm: () => localStorage.removeItem("competition-form"),
     });
 
   return (

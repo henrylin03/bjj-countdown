@@ -5,10 +5,9 @@ import DeleteCompetitionButton from "./DeleteCompetitionButton";
 
 //TODO: add close button and start delete confirmation flow (modal)
 //TODO: ensure responsive design of the box
-//TODO: when new competition added, get localstorage straight away (might need to use useEffect hook)
 // ? should this be split based on container and presentational components for ease of maintenance?
 
-export default function CountdownTimer() {
+export default function CountdownTimer(props) {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -16,14 +15,7 @@ export default function CountdownTimer() {
 
   const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
-  const getStoredCompetition = () => {
-    const retrievedData = window.localStorage.getItem("competition-form");
-    if (retrievedData) {
-      return JSON.parse(retrievedData);
-    }
-  };
-
-  const storedCompetitionObject = getStoredCompetition();
+  const storedCompetitionObject = props.storedCompetition;
 
   const setTimeUntilCompetition = () => {
     let currentTime = new Date().getTime();
@@ -67,7 +59,7 @@ export default function CountdownTimer() {
     >
       <DeleteCompetitionButton />
       <Title id="competition-name-display" order={1} mt="xl" tt="capitalize">
-        {/* {storedCompetitionObject.name} */} hello
+        {storedCompetitionObject.name}
       </Title>
 
       <SimpleGrid
