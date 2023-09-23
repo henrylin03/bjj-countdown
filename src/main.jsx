@@ -6,10 +6,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 
-// TODO: can create theme! use purple as before
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <MantineProvider theme={{}}>
+  <MantineProvider theme={{ fontFamily: "Montserrat, sans-serif" }}>
     <ModalsProvider>
       <React.StrictMode>
         <App />

@@ -8,14 +8,15 @@ function GithubFooter() {
     <ActionIcon
       size={50}
       variant="filled"
-      color="gray"
+      color="#2e294e"
       radius="xl"
       aria-label="Link to my GitHub"
       component="a"
       href="https://github.com/henrylin03/"
       target="_blank"
+      mb="xl"
     >
-      <IconBrandGithub size={35} stroke={2.3} />
+      <IconBrandGithub size={30} stroke={2.3} />
     </ActionIcon>
   );
 }

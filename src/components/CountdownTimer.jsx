@@ -49,8 +49,8 @@ export default function CountdownTimer(props) {
 
   return (
     <Box
-      bg="lightgray"
-      mt="xl"
+      bg="#92809a"
+      c="#181528"
       ta="center"
       style={(theme) => ({
         width: "80%",
@@ -58,39 +58,39 @@ export default function CountdownTimer(props) {
       })}
     >
       <DeleteCompetitionButton />
-      <Title id="competition-name-display" order={1} mt="xl" tt="capitalize">
+      <Title
+        id="competitionNameDisplay"
+        order={1}
+        mt="xl"
+        tt="uppercase"
+        c="#e3dee3"
+      >
         {storedCompetitionObject.name}
       </Title>
 
-      <SimpleGrid
-        id="countdown-timer"
-        cols={4}
-        mb="xl"
-        spacing="xs"
-        verticalSpacing="xs"
-      >
+      <SimpleGrid cols={4} spacing="xs" verticalSpacing="xs" mb="xl">
         <div>
           <Stack>
-            <Text fz={130}>{days}</Text>
-            <Text>Days</Text>
+            <Text class="timeUnit">{days}</Text>
+            <Text class="timeUnitLabel">Days</Text>
           </Stack>
         </div>
         <div>
           <Stack>
-            <Text fz={130}>{hours}</Text>
-            <Text>Hours</Text>
+            <Text class="timeUnit">{hours}</Text>
+            <Text class="timeUnitLabel">Hours</Text>
           </Stack>
         </div>
         <div>
           <Stack>
-            <Text fz={130}>{minutes}</Text>
-            <Text>Minutes</Text>
+            <Text class="timeUnit">{minutes}</Text>
+            <Text class="timeUnitLabel">Minutes</Text>
           </Stack>
         </div>
         <div>
           <Stack>
-            <Text fz={130}>{seconds}</Text>
-            <Text>Seconds</Text>
+            <Text class="timeUnit">{seconds}</Text>
+            <Text class="timeUnitLabel">Seconds</Text>
           </Stack>
         </div>
       </SimpleGrid>

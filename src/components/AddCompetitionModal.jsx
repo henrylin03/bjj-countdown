@@ -56,11 +56,18 @@ function AddCompetitionModal() {
           />
 
           <Group position="center" spacing="xs">
-            <Button fullWidth color="violet" radius="md" type="submit">
+            <Button
+              fullWidth
+              color="#92809a"
+              c="black"
+              radius="md"
+              type="submit"
+            >
               Add
             </Button>
             <Button
               color="gray"
+              c="black"
               fullWidth
               variant="light"
               radius="md"

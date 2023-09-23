@@ -13,8 +13,8 @@ function App() {
 
   return (
     <>
-      <Stack align="center" gap="lg">
-        <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} mt="xl" />
+      <Stack align="center" bg="#2e294e" justify="space-evenly" mih="100vh">
+        <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} />
         {storedCompetitionData ? (
           <CountdownTimer storedCompetitionData={storedCompetitionData} />
         ) : (

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Sifonn";
+  src: url("./src/assets/fonts/sifonn.otf") format("opentype");
+}
+
+#competitionNameDisplay {
+  font-family: "Sifonn", sans-serif;
+}
+
+.timeUnit {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 10rem;
+  letter-spacing: 1rem;
+  margin-bottom: -3rem;
+}
+
+.timeUnitLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}
+
+.modalHeading {
+  font-weight: bold;
+}

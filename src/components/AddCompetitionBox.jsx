@@ -1,5 +1,5 @@
 import { modals } from "@mantine/modals";
-import { Box, Title, Button } from "@mantine/core";
+import { Box, Text, Button } from "@mantine/core";
 import { IconCirclePlus } from "@tabler/icons-react";
 import AddCompetitionModal from "./AddCompetitionModal.jsx";
 
@@ -10,13 +10,13 @@ function AddCompetitionBox() {
         fullWidth
         variant="filled"
         leftSection={<IconCirclePlus size={27} />}
-        color="violet"
+        color="#92809a"
         size="xl"
         radius="lg"
         mih="15rem"
         onClick={() => {
           modals.open({
-            title: <Title order={4}>New Competition</Title>,
+            title: <Text class="modalHeading">New Competition</Text>,
             children: <AddCompetitionModal />,
             centered: true,
           });
