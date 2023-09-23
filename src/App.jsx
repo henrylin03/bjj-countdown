@@ -7,10 +7,7 @@ import GithubFooter from "./components/GithubFooter";
 function App() {
   const getStoredCompetition = () => {
     const retrievedData = window.localStorage.getItem("competition-form");
-    if (retrievedData) {
-      return JSON.parse(retrievedData);
-    }
-    return;
+    return retrievedData ? JSON.parse(retrievedData) : null;
   };
 
   const storedCompetition = getStoredCompetition();
