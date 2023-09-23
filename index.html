@@ -1,74 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="img/favicon.ico" rel="icon" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap"
-        rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BJJ Countdown</title>
 </head>
 
 <body>
-    <header>
-        <figure>
-            <img src="./img/gi.png" id="header-icon" width="130">
-        </figure>
-    </header>
-
-    <main>
-        <section id="countdown-timer">
-            <h2 id="competition-name-display"></h2>
-            <article id="time-units-and-labels">
-                <article id="days-container" class="time-units-container">
-                    <div class="time-unit" id="days">00</div>
-                    <small class="time-unit-label">days</small>
-                </article>
-                <article id="hours-container" class="time-units-container">
-                    <div class="time-unit" id="hours">00</div>
-                    <small class="time-unit-label">hours</small>
-                </article>
-                <article id="minutes-container" class="time-units-container">
-                    <div class="time-unit" id="minutes">00</div>
-                    <small class="time-unit-label">minutes</small>
-                </article>
-                <article id="seconds-container" class="time-units-container">
-                    <div class="time-unit" id="seconds">00</div>
-                    <small class="time-unit-label">seconds</small>
-                </article>
-            </article>
-        </section>
-
-        <section id="next-competition">
-            <h3>Next Competition</h3>
-            <form id="next-competition-form">
-                <article id="user-inputs-container">
-                    <div id="date-input-container" class="input-container">
-                        <img id="calendar-icon" class="user-input-icon" src="./img/calendar.png">
-                        <input id="competition-date-input" name="competition-date" type="date" placeholder="Date"
-                            class="user-input-field" required>
-                    </div>
-                    <div id="name-input-container" class="input-container">
-                        <img id="trophy-icon" class="user-input-icon" src="./img/trophy.png">
-                        <input id="competition-name-input" name="competition-name" type="text" class="user-input-field"
-                            placeholder="Name">
-                    </div>
-                </article>
-                <p id="error-message">⚠️ Please select a valid date in the future</p>
-                <input type="submit" id="start-countdown-button" value="Start"></input>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <figure id="github-icon">
-            <a href="https://github.com/henrylin03/" target="_blank"><img src="./img/github.png" width="45"></a>
-        </figure>
-    </footer>
-
-    <script src="./js/script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
