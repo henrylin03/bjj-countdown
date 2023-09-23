@@ -15,7 +15,7 @@ export default function CountdownTimer(props) {
 
   const addLeadingZeroes = (value) => (value < 10 ? `0${value}` : value);
 
-  const storedCompetitionObject = props.storedCompetition;
+  const storedCompetitionObject = props.storedCompetitionData;
 
   const setTimeUntilCompetition = () => {
     let currentTime = new Date().getTime();
@@ -45,7 +45,7 @@ export default function CountdownTimer(props) {
   useEffect(() => {
     interval.start();
     return interval.stop;
-  }, []);
+  });
 
   return (
     <Box

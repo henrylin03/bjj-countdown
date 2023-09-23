@@ -5,9 +5,6 @@ import { modals } from "@mantine/modals";
 import { IconTrophyFilled, IconCalendarEvent } from "@tabler/icons-react";
 
 function AddCompetitionModal() {
-  // test by showing what has been stored
-  console.log(JSON.parse(window.localStorage.getItem("competition-form")));
-
   const handleFormSubmit = () => {
     // add to local storage
     window.localStorage.setItem(
@@ -17,6 +14,9 @@ function AddCompetitionModal() {
 
     // close modal
     modals.closeAll();
+
+    // refresh page
+    location.reload();
 
     return;
   };
