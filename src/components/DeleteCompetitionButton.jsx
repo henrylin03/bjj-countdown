@@ -30,7 +30,7 @@ function DeleteCompetitionButton() {
       <CloseButton
         variant="transparent"
         onClick={handleCloseButtonClick}
-        c="lightgray"
+        c="lightgrey"
       />
     </Container>
   );
