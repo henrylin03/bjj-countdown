@@ -12,8 +12,8 @@ function App() {
   });
 
   return (
-    <>
-      <Stack align="center" bg="#2e294e" justify="space-evenly" mih="100vh">
+    <main>
+      <Stack align="center" bg="#2e294e" justify="space-evenly" h="100vh">
         <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} />
         {storedCompetitionData ? (
           <CountdownTimer storedCompetitionData={storedCompetitionData} />
@@ -22,7 +22,7 @@ function App() {
         )}
         <GithubFooter />
       </Stack>
-    </>
+    </main>
   );
 }
 
