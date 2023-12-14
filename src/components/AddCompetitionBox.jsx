@@ -13,7 +13,7 @@ function AddCompetitionBox() {
         color="#92809a"
         size="xl"
         radius="lg"
-        mih="15rem"
+        mih="25rem"
         onClick={() => {
           modals.open({
             title: <Text class="modalHeading">New Competition</Text>,

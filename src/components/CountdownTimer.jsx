@@ -1,11 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { Box, Text, Title, SimpleGrid, Stack } from "@mantine/core";
 import { useInterval } from "@mantine/hooks";
 import DeleteCompetitionButton from "./DeleteCompetitionButton";
-
-//TODO: add close button and start delete confirmation flow (modal)
-//TODO: ensure responsive design of the box
-// ? should this be split based on container and presentational components for ease of maintenance?
 
 export default function CountdownTimer(props) {
   const [days, setDays] = useState(0);
@@ -52,10 +49,9 @@ export default function CountdownTimer(props) {
       bg="#92809a"
       c="#181528"
       ta="center"
-      style={(theme) => ({
-        width: "80%",
-        borderRadius: theme.radius.lg,
-      })}
+      w="80%"
+      p="xl"
+      style={{ borderRadius: "2rem" }}
     >
       <DeleteCompetitionButton />
       <Title
