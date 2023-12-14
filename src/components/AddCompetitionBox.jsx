@@ -12,7 +12,7 @@ function AddCompetitionBox() {
         leftSection={<IconCirclePlus size={27} />}
         color="#92809a"
         size="xl"
-        radius="lg"
+        style={{ borderRadius: "1.5rem" }}
         mih="25rem"
         onClick={() => {
           modals.open({
