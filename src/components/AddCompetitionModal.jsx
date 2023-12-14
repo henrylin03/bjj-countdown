@@ -1,24 +1,19 @@
 import { useForm, isNotEmpty } from "@mantine/form";
 import { Button, Text, TextInput, Stack, Group } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
+import { DateInput } from "@mantine/dates";
 import "@mantine/dates/styles.css";
 import { modals } from "@mantine/modals";
 import { IconTrophyFilled, IconCalendarEvent } from "@tabler/icons-react";
 
 function AddCompetitionModal() {
   const handleFormSubmit = () => {
-    // add to local storage
     window.localStorage.setItem(
       "competition-form",
       JSON.stringify(form.values)
     );
-
     modals.closeAll();
-
     location.reload();
   };
-
-  //? would it be a good idea to pull from localstorage the last name and date of competition?
 
   const form = useForm({
     initialValues: { name: "", date: null },
@@ -29,8 +24,7 @@ function AddCompetitionModal() {
   });
 
   return (
-    <Stack>
-      <Text>Please enter the details of your next competition</Text>
+    <article>
       <form onSubmit={form.onSubmit(handleFormSubmit)}>
         <Stack spacing="md">
           <TextInput
@@ -40,19 +34,17 @@ function AddCompetitionModal() {
             {...form.getInputProps("name")}
             withAsterisk
           />
-
-          <DatePickerInput
+          <DateInput
+            clearable
             minDate={new Date()}
             icon={<IconCalendarEvent size="1.2rem" />}
-            valueFormat="DD MMM YYYY"
+            valueFormat="D MMMM YYYY"
             placeholder="Date"
             label="Date"
             withAsterisk
-            popoverProps={{ withinPortal: true }} // ensures full visibility of datepicker
             {...form.getInputProps("date")}
           />
-
-          <Group position="center" spacing="xs">
+          <Stack position="center" gap="xs">
             <Button fullWidth color="violet" radius="md" type="submit">
               Add
             </Button>
@@ -66,10 +58,10 @@ function AddCompetitionModal() {
             >
               Close
             </Button>
-          </Group>
+          </Stack>
         </Stack>
       </form>
-    </Stack>
+    </article>
   );
 }
 
