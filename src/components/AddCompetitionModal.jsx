@@ -1,6 +1,7 @@
 import { useForm, isNotEmpty } from "@mantine/form";
 import { Button, Text, TextInput, Stack, Group } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
+import "@mantine/dates/styles.css";
 import { modals } from "@mantine/modals";
 import { IconTrophyFilled, IconCalendarEvent } from "@tabler/icons-react";
 
@@ -12,13 +13,9 @@ function AddCompetitionModal() {
       JSON.stringify(form.values)
     );
 
-    // close modal
     modals.closeAll();
 
-    // refresh page
     location.reload();
-
-    return;
   };
 
   //? would it be a good idea to pull from localstorage the last name and date of competition?
