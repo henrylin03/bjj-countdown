@@ -15,6 +15,12 @@ function AddCompetitionModal() {
     location.reload();
   };
 
+  const getTomorrowsDate = () => {
+    const resultDate = new Date();
+    resultDate.setDate(resultDate.getDate() + 1);
+    return resultDate;
+  };
+
   const form = useForm({
     initialValues: { name: "", date: null },
     validate: {
@@ -36,7 +42,7 @@ function AddCompetitionModal() {
           />
           <DateInput
             clearable
-            minDate={new Date()}
+            minDate={getTomorrowsDate()}
             icon={<IconCalendarEvent size="1.2rem" />}
             valueFormat="D MMMM YYYY"
             placeholder="Date"
