@@ -12,17 +12,15 @@ function App() {
   });
 
   return (
-    <main>
-      <Stack align="center" bg="#2e294e" justify="space-evenly" h="100vh">
-        <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} />
-        {storedCompetitionData ? (
-          <CountdownTimer storedCompetitionData={storedCompetitionData} />
-        ) : (
-          <AddCompetitionBox />
-        )}
-        <GithubFooter />
-      </Stack>
-    </main>
+    <Stack align="center" bg="#2e294e" justify="space-evenly" h="100vh">
+      <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} />
+      {storedCompetitionData ? (
+        <CountdownTimer storedCompetitionData={storedCompetitionData} />
+      ) : (
+        <AddCompetitionBox />
+      )}
+      <GithubFooter />
+    </Stack>
   );
 }
 
