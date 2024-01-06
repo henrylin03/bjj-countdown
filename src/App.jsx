@@ -1,7 +1,7 @@
 import { Stack, Image } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import headerIcon from "./assets/images/gi.png";
-import AddCompetitionBox from "./components/AddCompetitionBox/AddCompetitionBox";
+import AddCompetitionButton from "./components/AddCompetitionButton/AddCompetitionButton";
 import CountdownTimer from "./components/CountdownTimer/CountdownTimer";
 import GithubFooter from "./components/GithubFooter/GithubFooter";
 
@@ -17,7 +17,7 @@ function App() {
       {storedCompetitionData ? (
         <CountdownTimer storedCompetitionData={storedCompetitionData} />
       ) : (
-        <AddCompetitionBox />
+        <AddCompetitionButton />
       )}
       <GithubFooter />
     </Stack>
