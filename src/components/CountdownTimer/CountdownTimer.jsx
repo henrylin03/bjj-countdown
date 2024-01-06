@@ -71,20 +71,20 @@ export default function CountdownTimer(props) {
         mb="xl"
       >
         <Stack>
-          <Text className="timeUnit">{days}</Text>
-          <Text className="timeUnitLabel">Days</Text>
+          <Text class="timeUnit">{days}</Text>
+          <Text class="timeUnitLabel">Days</Text>
         </Stack>
         <Stack>
-          <Text className="timeUnit">{hours}</Text>
-          <Text className="timeUnitLabel">Hours</Text>
+          <Text class="timeUnit">{hours}</Text>
+          <Text class="timeUnitLabel">Hours</Text>
         </Stack>
         <Stack>
-          <Text className="timeUnit">{minutes}</Text>
-          <Text className="timeUnitLabel">Minutes</Text>
+          <Text class="timeUnit">{minutes}</Text>
+          <Text class="timeUnitLabel">Minutes</Text>
         </Stack>
         <Stack>
-          <Text className="timeUnit">{seconds}</Text>
-          <Text className="timeUnitLabel">Seconds</Text>
+          <Text class="timeUnit">{seconds}</Text>
+          <Text class="timeUnitLabel">Seconds</Text>
         </Stack>
       </SimpleGrid>
     </Box>
