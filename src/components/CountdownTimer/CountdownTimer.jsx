@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Box, Text, Title, SimpleGrid, Stack } from "@mantine/core";
 import { useInterval } from "@mantine/hooks";
 import DeleteCompetitionButton from "./DeleteCompetitionButton";
+import styles from "./CountdownTimer.module.css";
 
 export default function CountdownTimer(props) {
   const [days, setDays] = useState(0);
@@ -51,28 +52,15 @@ export default function CountdownTimer(props) {
   ];
   const timeUnits = timeUnitsData.map((unit) => (
     <Stack>
-      <Text class="timeUnit">{unit.value}</Text>
-      <Text class="timeUnitLabel">{unit.label}</Text>
+      <Text className={styles.timeUnit}>{unit.value}</Text>
+      <Text className={styles.timeUnitLabel}>{unit.label}</Text>
     </Stack>
   ));
 
   return (
-    <Box
-      bg="#92809a"
-      c="#181528"
-      ta="center"
-      w="80%"
-      p="xl"
-      style={{ borderRadius: "2rem" }}
-    >
+    <Box className={styles.container} ta="center" c="#181528">
       <DeleteCompetitionButton />
-      <Title
-        id="competitionNameDisplay"
-        order={1}
-        mt="xl"
-        tt="uppercase"
-        c="#e3dee3"
-      >
+      <Title id="competitionNameDisplay" mt="xl" tt="uppercase" c="#e3dee3">
         {storedCompetitionObject.name}
       </Title>
 

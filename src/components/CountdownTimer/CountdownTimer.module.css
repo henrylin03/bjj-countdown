@@ -1,0 +1,32 @@
+.container {
+  width: 80%;
+  height: 50%;
+  border-radius: 2.5rem;
+  background-color: #92809a;
+  padding: 2rem;
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    width: 90%;
+  }
+
+  @media (max-height: $mantine-breakpoint-sm) and (max-width: $mantine-breakpoint-sm) {
+    height: 45%;
+    border-radius: 1.5rem;
+  }
+
+  @media (max-height: $mantine-breakpoint-xs) or (max-width: $mantine-breakpoint-xs) {
+    font-size: 1rem;
+  }
+}
+
+.timeUnit {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 10rem;
+  letter-spacing: 1rem;
+  margin-bottom: -3rem;
+}
+
+.timeUnitLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}
