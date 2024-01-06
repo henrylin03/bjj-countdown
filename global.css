@@ -9,6 +9,14 @@
   src: url("./src/assets/fonts/sifonn.otf") format("opentype");
 }
 
+#headerIcon {
+  width: 6rem;
+
+  @media (max-height: $mantine-breakpoint-xs) {
+    width: 3rem;
+  }
+}
+
 #competitionNameDisplay {
   font-family: "Sifonn", sans-serif;
 }

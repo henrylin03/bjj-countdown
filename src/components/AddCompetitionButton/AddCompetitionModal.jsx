@@ -1,5 +1,5 @@
 import { useForm, isNotEmpty } from "@mantine/form";
-import { Button, Text, TextInput, Stack, Group } from "@mantine/core";
+import { Button, TextInput, Stack } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import "@mantine/dates/styles.css";
 import { modals } from "@mantine/modals";
@@ -13,6 +13,12 @@ function AddCompetitionModal() {
     );
     modals.closeAll();
     location.reload();
+  };
+
+  const getTomorrowsDate = () => {
+    const resultDate = new Date();
+    resultDate.setDate(resultDate.getDate() + 1);
+    return resultDate;
   };
 
   const form = useForm({
@@ -36,7 +42,7 @@ function AddCompetitionModal() {
           />
           <DateInput
             clearable
-            minDate={new Date()}
+            minDate={getTomorrowsDate()}
             icon={<IconCalendarEvent size="1.2rem" />}
             valueFormat="D MMMM YYYY"
             placeholder="Date"
