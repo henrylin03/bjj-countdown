@@ -7,4 +7,13 @@
   @media (max-width: $mantine-breakpoint-lg) {
     width: 90%;
   }
+
+  @media (max-height: $mantine-breakpoint-sm) and (max-width: $mantine-breakpoint-sm) {
+    height: 45%;
+    border-radius: 1.5rem;
+  }
+
+  @media (max-height: $mantine-breakpoint-xs) or (max-width: $mantine-breakpoint-xs) {
+    font-size: 1rem;
+  }
 }
