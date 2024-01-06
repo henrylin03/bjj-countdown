@@ -1,8 +1,6 @@
 import { ActionIcon } from "@mantine/core";
 import { IconBrandGithub } from "@tabler/icons-react";
 
-//TODO: ADD HOVER TO SAY THIS IS MY GITHUB PORTFOLIO
-
 function GithubFooter() {
   return (
     <ActionIcon
