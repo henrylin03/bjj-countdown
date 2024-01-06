@@ -1,6 +1,10 @@
 .button {
   width: 80%;
   height: 50%;
-  border-radius: 1.5rem;
+  border-radius: 2.5rem;
   background-color: #92809a;
+
+  @media and (max-width: $mantine-breakpoint-xl) {
+    color: red;
+  }
 }
