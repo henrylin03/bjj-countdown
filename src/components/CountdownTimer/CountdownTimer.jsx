@@ -58,7 +58,7 @@ export default function CountdownTimer(props) {
   ));
 
   return (
-    <Box className={styles.container} ta="center" c="#181528">
+    <Box className={styles.container} ta="center">
       <DeleteCompetitionButton />
       <Title className={styles.competitionName} tt="uppercase">
         {storedCompetitionObject.name}
