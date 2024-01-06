@@ -18,7 +18,9 @@ function App() {
     <MantineProvider theme={{ fontFamily: "Montserrat, sans-serif" }}>
       <ModalsProvider>
         <Stack align="center" bg="#2e294e" justify="space-evenly" h="100vh">
-          <Image src={headerIcon} alt="Jiujitsu gi emoji" w={100} />
+          <header>
+            <Image src={headerIcon} id="headerIcon" alt="Jiujitsu gi emoji" />
+          </header>
           {storedCompetitionData ? (
             <CountdownTimer storedCompetitionData={storedCompetitionData} />
           ) : (
