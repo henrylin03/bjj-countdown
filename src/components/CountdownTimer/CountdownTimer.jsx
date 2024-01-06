@@ -38,11 +38,23 @@ export default function CountdownTimer(props) {
   };
 
   const interval = useInterval(setTimeUntilCompetition, 1000);
-
   useEffect(() => {
     interval.start();
     return interval.stop;
   });
+
+  const timeUnitsData = [
+    { label: "Days", value: days },
+    { label: "Hours", value: hours },
+    { label: "Minutes", value: minutes },
+    { label: "Seconds", value: seconds },
+  ];
+  const timeUnits = timeUnitsData.map((unit) => (
+    <Stack>
+      <Text class="timeUnit">{unit.value}</Text>
+      <Text class="timeUnitLabel">{unit.label}</Text>
+    </Stack>
+  ));
 
   return (
     <Box
@@ -70,22 +82,7 @@ export default function CountdownTimer(props) {
         verticalSpacing="xs"
         mb="xl"
       >
-        <Stack>
-          <Text class="timeUnit">{days}</Text>
-          <Text class="timeUnitLabel">Days</Text>
-        </Stack>
-        <Stack>
-          <Text class="timeUnit">{hours}</Text>
-          <Text class="timeUnitLabel">Hours</Text>
-        </Stack>
-        <Stack>
-          <Text class="timeUnit">{minutes}</Text>
-          <Text class="timeUnitLabel">Minutes</Text>
-        </Stack>
-        <Stack>
-          <Text class="timeUnit">{seconds}</Text>
-          <Text class="timeUnitLabel">Seconds</Text>
-        </Stack>
+        {timeUnits}
       </SimpleGrid>
     </Box>
   );
