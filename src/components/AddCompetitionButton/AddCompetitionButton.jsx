@@ -19,7 +19,7 @@ function AddCompetitionBox() {
         });
       }}
     >
-      Add new competition
+      Add competition
     </Button>
   );
 }
