@@ -1,5 +1,5 @@
 import { useForm, isNotEmpty } from "@mantine/form";
-import { Button, Text, TextInput, Stack } from "@mantine/core";
+import { Button, TextInput, Stack } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import "@mantine/dates/styles.css";
 import { modals } from "@mantine/modals";

@@ -13,7 +13,7 @@ function AddCompetitionBox() {
       className={styles.button}
       onClick={() => {
         modals.open({
-          title: <Text class="modalHeading">New Competition</Text>,
+          title: <Text className="modalHeading">New Competition</Text>,
           children: <AddCompetitionModal />,
           centered: true,
         });

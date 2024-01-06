@@ -14,6 +14,11 @@ function App() {
     defaultValue: null,
   });
 
+  const storedCompetitionDateValid = () =>
+    storedCompetitionData
+      ? new Date(storedCompetitionData.date) > new Date()
+      : storedCompetitionData;
+
   return (
     <MantineProvider theme={{ fontFamily: "Montserrat, sans-serif" }}>
       <ModalsProvider>
@@ -21,7 +26,7 @@ function App() {
           <header>
             <Image src={headerIcon} id="headerIcon" alt="Jiujitsu gi emoji" />
           </header>
-          {storedCompetitionData ? (
+          {storedCompetitionDateValid() ? (
             <CountdownTimer storedCompetitionData={storedCompetitionData} />
           ) : (
             <AddCompetitionButton />
