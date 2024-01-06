@@ -3,7 +3,7 @@
   height: 50%;
   border-radius: 2.5rem;
   background-color: #92809a;
-  padding: 2rem;
+  padding: 3.2rem;
 
   @media (max-width: $mantine-breakpoint-lg) {
     width: 90%;
@@ -19,11 +19,20 @@
   }
 }
 
+.competitionName {
+  font-family: "Sifonn", sans-serif;
+  color: #e3dee3;
+}
+
+.grid {
+  height: 100%;
+  margin: auto, 0;
+}
+
 .timeUnit {
   font-family: "Bebas Neue", sans-serif;
   font-size: 10rem;
   letter-spacing: 1rem;
-  margin-bottom: -3rem;
 }
 
 .timeUnitLabel {

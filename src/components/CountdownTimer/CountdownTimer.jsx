@@ -60,15 +60,15 @@ export default function CountdownTimer(props) {
   return (
     <Box className={styles.container} ta="center" c="#181528">
       <DeleteCompetitionButton />
-      <Title id="competitionNameDisplay" mt="xl" tt="uppercase" c="#e3dee3">
+      <Title className={styles.competitionName} tt="uppercase">
         {storedCompetitionObject.name}
       </Title>
 
       <SimpleGrid
+        className={styles.grid}
         cols={{ base: 2, sm: 4 }}
         spacing="xs"
         verticalSpacing="xs"
-        mb="xl"
       >
         {timeUnits}
       </SimpleGrid>
