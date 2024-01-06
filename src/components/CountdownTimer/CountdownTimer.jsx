@@ -41,7 +41,7 @@ export default function CountdownTimer(props) {
 
   useEffect(() => {
     interval.start();
-    interval.stop;
+    return interval.stop;
   });
 
   return (
