@@ -41,7 +41,7 @@ export default function CountdownTimer(props) {
 
   useEffect(() => {
     interval.start();
-    return interval.stop;
+    interval.stop;
   });
 
   return (
@@ -64,31 +64,28 @@ export default function CountdownTimer(props) {
         {storedCompetitionObject.name}
       </Title>
 
-      <SimpleGrid cols={4} spacing="xs" verticalSpacing="xs" mb="xl">
-        <div>
-          <Stack>
-            <Text class="timeUnit">{days}</Text>
-            <Text class="timeUnitLabel">Days</Text>
-          </Stack>
-        </div>
-        <div>
-          <Stack>
-            <Text class="timeUnit">{hours}</Text>
-            <Text class="timeUnitLabel">Hours</Text>
-          </Stack>
-        </div>
-        <div>
-          <Stack>
-            <Text class="timeUnit">{minutes}</Text>
-            <Text class="timeUnitLabel">Minutes</Text>
-          </Stack>
-        </div>
-        <div>
-          <Stack>
-            <Text class="timeUnit">{seconds}</Text>
-            <Text class="timeUnitLabel">Seconds</Text>
-          </Stack>
-        </div>
+      <SimpleGrid
+        cols={{ base: 2, sm: 4 }}
+        spacing="xs"
+        verticalSpacing="xs"
+        mb="xl"
+      >
+        <Stack>
+          <Text class="timeUnit">{days}</Text>
+          <Text class="timeUnitLabel">Days</Text>
+        </Stack>
+        <Stack>
+          <Text class="timeUnit">{hours}</Text>
+          <Text class="timeUnitLabel">Hours</Text>
+        </Stack>
+        <Stack>
+          <Text class="timeUnit">{minutes}</Text>
+          <Text class="timeUnitLabel">Minutes</Text>
+        </Stack>
+        <Stack>
+          <Text class="timeUnit">{seconds}</Text>
+          <Text class="timeUnitLabel">Seconds</Text>
+        </Stack>
       </SimpleGrid>
     </Box>
   );
