@@ -3,9 +3,9 @@
   height: 50%;
   border-radius: 2.5rem;
   background-color: #92809a;
-  padding: 3.2rem;
+  padding: 3rem;
 
-  @media (max-width: $mantine-breakpoint-lg) {
+  @media (max-width: $mantine-breakpoint-md) {
     width: 90%;
   }
 
@@ -13,30 +13,50 @@
     height: 45%;
     border-radius: 1.5rem;
   }
+}
 
-  @media (max-height: $mantine-breakpoint-xs) or (max-width: $mantine-breakpoint-xs) {
-    font-size: 1rem;
-  }
+.inner {
+  height: 100%;
+  margin: auto;
 }
 
 .competitionName {
   font-family: "Sifonn", sans-serif;
   color: #e3dee3;
-}
-
-.grid {
-  height: 100%;
-  margin: auto, 0;
-  color: #181528;
+  font-size: 2.5rem;
 }
 
 .timeUnit {
   font-family: "Bebas Neue", sans-serif;
   font-size: 10rem;
   letter-spacing: 1rem;
+  color: #181528;
+  text-align: center;
 }
 
 .timeUnitLabel {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
+  color: #181528;
+  text-align: center;
+}
+
+@media screen and (max-width: $mantine-breakpoint-xs) {
+  .container {
+    height: 40%;
+    margin: auto, 0;
+  }
+
+  .competitionName {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .timeUnit {
+    font-size: 2.5rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.8rem;
+  }
 }
