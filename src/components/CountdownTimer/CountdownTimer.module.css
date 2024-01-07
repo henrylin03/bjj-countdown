@@ -39,6 +39,10 @@
 }
 
 @media screen and (max-width: $mantine-breakpoint-md) {
+  .container {
+    width: 90%;
+  }
+
   .competitionName {
     margin-bottom: 0;
   }
@@ -54,6 +58,10 @@
 }
 
 @media screen and (max-width: $mantine-breakpoint-sm) {
+  .container {
+    width: 80%;
+  }
+
   .timeUnit {
     letter-spacing: 1rem;
   }

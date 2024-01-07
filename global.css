@@ -11,7 +11,7 @@
 
 #headerIcon {
   width: 6rem;
-
+  margin: 1rem;
   @media (max-height: $mantine-breakpoint-xs) {
     width: 3rem;
   }
