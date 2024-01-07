@@ -9,9 +9,19 @@
   src: url("./src/assets/fonts/sifonn.otf") format("opentype");
 }
 
+#root {
+  height: 100%;
+  background-color: #2e294e;
+  text-align: center;
+}
+
 #headerIcon {
   width: 6rem;
-  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+
   @media (max-height: $mantine-breakpoint-xs) {
     width: 3rem;
   }

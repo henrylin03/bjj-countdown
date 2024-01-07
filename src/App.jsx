@@ -1,4 +1,4 @@
-import { Stack, Image, MantineProvider } from "@mantine/core";
+import { Image, MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { useLocalStorage } from "@mantine/hooks";
 import "@mantine/core/styles.css";
@@ -22,17 +22,17 @@ function App() {
   return (
     <MantineProvider theme={{ fontFamily: "Montserrat, sans-serif" }}>
       <ModalsProvider>
-        <Stack align="center" bg="#2e294e" justify="space-evenly" h="100vh">
-          <header>
-            <Image src={headerIcon} id="headerIcon" alt="Jiujitsu gi emoji" />
-          </header>
+        <header>
+          <Image src={headerIcon} id="headerIcon" alt="Jiujitsu gi emoji" />
+        </header>
+        <main>
           {storedCompetitionDateValid() ? (
             <CountdownTimer storedCompetitionData={storedCompetitionData} />
           ) : (
             <AddCompetitionButton />
           )}
-          <GithubFooter />
-        </Stack>
+        </main>
+        <GithubFooter />
       </ModalsProvider>
     </MantineProvider>
   );
