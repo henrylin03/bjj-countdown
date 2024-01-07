@@ -1,23 +1,9 @@
 .container {
   width: 80%;
-  height: 50%;
+  height: auto;
   border-radius: 2.5rem;
   background-color: #92809a;
   padding: 3rem;
-
-  @media (max-width: $mantine-breakpoint-md) {
-    width: 90%;
-  }
-
-  @media (max-height: $mantine-breakpoint-sm) and (max-width: $mantine-breakpoint-sm) {
-    height: 45%;
-    border-radius: 1.5rem;
-  }
-}
-
-.inner {
-  height: 100%;
-  margin: auto;
 }
 
 .competitionName {
@@ -31,32 +17,65 @@
   font-size: 10rem;
   letter-spacing: 1rem;
   color: #181528;
-  text-align: center;
 }
 
 .timeUnitLabel {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   color: #181528;
-  text-align: center;
+  margin-top: -2vh;
 }
 
-@media screen and (max-width: $mantine-breakpoint-xs) {
+@media screen and (max-width: $mantine-breakpoint-lg) {
   .container {
-    height: 40%;
-    margin: auto, 0;
+    height: auto;
+    width: 90%;
+    border-radius: 2rem;
   }
 
   .competitionName {
-    font-size: 1.5rem;
+    font-size: 4vh;
     margin-bottom: 1rem;
   }
 
   .timeUnit {
-    font-size: 2.5rem;
+    font-size: 17vh;
+    letter-spacing: 0.5vw;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-md) {
+  .competitionName {
+    font-size: 4vh;
+    margin-bottom: 1rem;
+  }
+
+  .timeUnit {
+    font-size: 16vw;
+    letter-spacing: 0;
   }
 
   .timeUnitLabel {
-    font-size: 0.8rem;
+    font-size: 1.8vh;
+    margin-top: -2vh;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-sm) {
+  .timeUnit {
+    font-size: 12vh;
+    letter-spacing: 2vw;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-xs) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 1.8vh;
+    margin-top: -4vh;
   }
 }

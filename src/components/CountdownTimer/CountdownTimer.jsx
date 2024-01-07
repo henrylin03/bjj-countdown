@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { Box, Title, SimpleGrid, Stack } from "@mantine/core";
+import { Box, Title, SimpleGrid, Stack, Text } from "@mantine/core";
 import { useInterval } from "@mantine/hooks";
 import DeleteCompetitionButton from "./DeleteCompetitionButton";
 import styles from "./CountdownTimer.module.css";
@@ -51,24 +51,27 @@ export default function CountdownTimer(props) {
     { label: "Seconds", value: seconds },
   ];
   const timeUnits = timeUnitsData.map((unit) => (
-    <Stack align="center" gap="xs" className={styles.stack}>
-      <p className={styles.timeUnit}>{unit.value}</p>
-      <p className={styles.timeUnitLabel}>{unit.label}</p>
+    <Stack align="center" gap="xs">
+      <Text className={styles.timeUnit} ta="center">
+        {unit.value}
+      </Text>
+      <Text className={styles.timeUnitLabel} ta="center">
+        {unit.label}
+      </Text>
     </Stack>
   ));
 
+  //TODO: fix location of competition button
   return (
     <Box className={styles.container} ta="center">
       <DeleteCompetitionButton />
-      <article className={styles.inner}>
-        <Title className={styles.competitionName} tt="uppercase">
-          {storedCompetitionObject.name}
-        </Title>
+      <Title className={styles.competitionName} tt="uppercase">
+        {storedCompetitionObject.name}
+      </Title>
 
-        <SimpleGrid cols={{ base: 2, sm: 4 }} verticalSpacing="xl">
-          {timeUnits}
-        </SimpleGrid>
-      </article>
+      <SimpleGrid cols={{ base: 2, sm: 4 }} verticalSpacing="xl">
+        {timeUnits}
+      </SimpleGrid>
     </Box>
   );
 }
