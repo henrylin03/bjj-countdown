@@ -1,22 +1,21 @@
 import { ActionIcon } from "@mantine/core";
 import { IconBrandGithub } from "@tabler/icons-react";
-import styles from "./GithubFooter.module.css";
 
 function GithubFooter() {
   return (
     <footer>
       <ActionIcon
-        className={styles.iconContainer}
-        size="xl"
+        size={50}
         variant="filled"
-        radius="xl"
         color="#2e294e"
+        radius="xl"
         aria-label="Link to my GitHub"
         component="a"
         href="https://github.com/henrylin03/"
         target="_blank"
+        mb="xl"
       >
-        <IconBrandGithub stroke={2.3} className={styles.icon} />
+        <IconBrandGithub size={30} stroke={2.3} />
       </ActionIcon>
     </footer>
   );

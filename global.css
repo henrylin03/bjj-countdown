@@ -9,19 +9,9 @@
   src: url("./src/assets/fonts/sifonn.otf") format("opentype");
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  background-color: #2e294e;
-  text-align: center;
-}
-
 #headerIcon {
   width: 6rem;
-  margin: 2rem auto;
-
+  margin: 1rem;
   @media (max-height: $mantine-breakpoint-xs) {
     width: 3rem;
   }
@@ -29,8 +19,4 @@
 
 .modalHeading {
   font-weight: bold;
-}
-
-footer {
-  background-color: #2e294e;
 }
