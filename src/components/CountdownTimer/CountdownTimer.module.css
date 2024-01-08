@@ -11,6 +11,9 @@
   font-family: "Sifonn", sans-serif;
   color: #e3dee3;
   font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  max-width: 60%;
+  margin: auto;
 }
 
 .timeUnit {
@@ -38,12 +41,13 @@
   }
 }
 
-@media screen and (max-width: $mantine-breakpoint-md) {
+@media screen and (max-width: $mantine-breakpoint-md) and (min-height: $mantine-breakpoint-xs) {
   .container {
     width: 90%;
   }
 
   .competitionName {
+    max-width: 88%;
     margin-bottom: 0;
   }
 
@@ -57,12 +61,18 @@
   }
 }
 
-@media screen and (max-width: $mantine-breakpoint-sm) {
+@media screen and (max-width: $mantine-breakpoint-sm) and (min-height: $mantine-breakpoint-xs) {
   .container {
     width: 80%;
   }
 
+  .competitionName {
+    max-width: 95%;
+    padding: 2rem;
+  }
+
   .timeUnit {
+    font-size: 6rem;
     letter-spacing: 1rem;
   }
 }
@@ -74,6 +84,7 @@
   }
 
   .competitionName {
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
@@ -85,5 +96,46 @@
   .timeUnitLabel {
     font-size: 0.8rem;
     margin-top: -1.5rem;
+  }
+}
+
+/* for smaller mobile screens that are rotated horizontally (landscape) */
+@media screen and (max-width: $mantine-breakpoint-md) and (max-height: $mantine-breakpoint-xs) {
+  .competitionName {
+    font-size: 1.5rem;
+  }
+
+  .timeUnit {
+    font-size: 4rem;
+    letter-spacing: 1.2rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.8rem;
+    margin-top: -1rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-sm) and (max-height: $mantine-breakpoint-xs) {
+  .container {
+    width: 70%;
+    padding: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .competitionName {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .timeUnit {
+    font-size: 2.5rem;
+    letter-spacing: 1.5rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.6rem;
+    padding-right: 1.5rem;
   }
 }
