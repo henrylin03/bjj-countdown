@@ -1,4 +1,4 @@
-import { Image, MantineProvider } from "@mantine/core";
+import { Image, MantineProvider, Center } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { useLocalStorage } from "@mantine/hooks";
 import "@mantine/core/styles.css";

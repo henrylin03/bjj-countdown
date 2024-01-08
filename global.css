@@ -10,6 +10,9 @@
 }
 
 #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   background-color: #2e294e;
   text-align: center;
@@ -17,10 +20,7 @@
 
 #headerIcon {
   width: 6rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  margin: 2rem auto;
 
   @media (max-height: $mantine-breakpoint-xs) {
     width: 3rem;
@@ -29,4 +29,8 @@
 
 .modalHeading {
   font-weight: bold;
+}
+
+footer {
+  background-color: #2e294e;
 }
