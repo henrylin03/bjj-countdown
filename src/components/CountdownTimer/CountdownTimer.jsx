@@ -61,7 +61,6 @@ export default function CountdownTimer(props) {
     </Stack>
   ));
 
-  //TODO: fix location of competition button
   return (
     <Box className={styles.container} ta="center">
       <DeleteCompetitionButton />
