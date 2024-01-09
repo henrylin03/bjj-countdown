@@ -1,0 +1,6 @@
+@media screen and (max-width: $mantine-breakpoint-sm) {
+  .icon {
+    width: 50%;
+    height: 50%;
+  }
+}

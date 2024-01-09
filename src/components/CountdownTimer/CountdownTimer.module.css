@@ -1,0 +1,185 @@
+.container {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  border-radius: 2.5rem;
+  background-color: #92809a;
+  padding: 3rem;
+}
+
+.competitionName {
+  font-family: "Sifonn", sans-serif;
+  color: #e3dee3;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  max-width: 60%;
+  margin: auto;
+}
+
+.timeUnit {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 10rem;
+  letter-spacing: 1rem;
+  color: #181528;
+}
+
+.timeUnitLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: #181528;
+  margin-top: -2vh;
+}
+
+@media screen and (max-width: $mantine-breakpoint-lg) {
+  .competitionName {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .timeUnit {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-md) and (min-height: $mantine-breakpoint-xs) {
+  .container {
+    width: 90%;
+  }
+
+  .competitionName {
+    max-width: 88%;
+    margin-bottom: 0;
+  }
+
+  .timeUnit {
+    letter-spacing: 0;
+  }
+
+  .timeUnitLabel {
+    font-size: 1rem;
+    margin-top: -3rem;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-sm) and (min-height: $mantine-breakpoint-xs) {
+  .container {
+    width: 80%;
+  }
+
+  .competitionName {
+    max-width: 95%;
+    padding: 2rem;
+  }
+
+  .timeUnit {
+    font-size: 6rem;
+    letter-spacing: 1rem;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-xs) and (min-height: $mantine-breakpoint-sm) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .competitionName {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .timeUnit {
+    font-size: 5rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.8rem;
+    margin-top: -1.5rem;
+  }
+}
+
+/* for smaller mobile screens that are rotated horizontally (landscape) */
+@media screen and (max-width: $mantine-breakpoint-md) and (max-height: $mantine-breakpoint-xs) {
+  .competitionName {
+    font-size: 1.5rem;
+  }
+
+  .timeUnit {
+    font-size: 4rem;
+    letter-spacing: 1.2rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.8rem;
+    margin-top: -1rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: $mantine-breakpoint-sm) and (max-height: $mantine-breakpoint-xs) {
+  .container {
+    width: 70%;
+    padding: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .competitionName {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .timeUnit {
+    font-size: 2.5rem;
+    letter-spacing: 1.5rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.6rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* extremely narrow, mobile screens, like the Galaxy Fold */
+@media screen and (max-width: $mantine-breakpoint-xs) and (max-height: $mantine-breakpoint-sm) {
+  .container {
+    width: 90%;
+    padding: 1rem 0.1rem;
+  }
+
+  .competitionName {
+    font-size: 1rem;
+    margin-bottom: -1rem;
+  }
+
+  .timeUnit {
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.8rem;
+    margin-top: -2rem;
+  }
+}
+
+/* ...rotated horizontally */
+@media screen and (max-width: 654px) and (max-height: 281px) {
+  .container {
+    margin-top: 2rem;
+  }
+
+  .competitionName {
+    margin-bottom: -0.1rem;
+  }
+
+  .timeUnit {
+    font-size: 1.5rem;
+    letter-spacing: 2rem;
+  }
+
+  .timeUnitLabel {
+    font-size: 0.6rem;
+    letter-spacing: 0.2rem;
+  }
+}

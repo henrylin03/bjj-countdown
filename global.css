@@ -11,26 +11,16 @@
 
 #headerIcon {
   width: 6rem;
+  margin: 1rem;
 
   @media (max-height: $mantine-breakpoint-xs) {
     width: 3rem;
   }
-}
 
-#competitionNameDisplay {
-  font-family: "Sifonn", sans-serif;
-}
-
-.timeUnit {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 10rem;
-  letter-spacing: 1rem;
-  margin-bottom: -3rem;
-}
-
-.timeUnitLabel {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
+  /* for smaller mobile screens that are rotated horizontally (landscape) */
+  @media (max-width: $mantine-breakpoint-md) and (max-height: $mantine-breakpoint-xs) {
+    display: none;
+  }
 }
 
 .modalHeading {

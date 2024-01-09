@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { Box, Text, Title, SimpleGrid, Stack } from "@mantine/core";
+import { Box, Title, SimpleGrid, Stack, Text } from "@mantine/core";
 import { useInterval } from "@mantine/hooks";
 import DeleteCompetitionButton from "./DeleteCompetitionButton";
+import styles from "./CountdownTimer.module.css";
 
 export default function CountdownTimer(props) {
   const [days, setDays] = useState(0);
@@ -38,54 +39,37 @@ export default function CountdownTimer(props) {
   };
 
   const interval = useInterval(setTimeUntilCompetition, 1000);
-
   useEffect(() => {
     interval.start();
-    interval.stop;
+    return interval.stop;
   });
 
+  const timeUnitsData = [
+    { label: "Days", value: days },
+    { label: "Hours", value: hours },
+    { label: "Minutes", value: minutes },
+    { label: "Seconds", value: seconds },
+  ];
+  const timeUnits = timeUnitsData.map((unit) => (
+    <Stack align="center" gap="xs">
+      <Text className={styles.timeUnit} ta="center">
+        {unit.value}
+      </Text>
+      <Text className={styles.timeUnitLabel} ta="center">
+        {unit.label}
+      </Text>
+    </Stack>
+  ));
+
   return (
-    <Box
-      bg="#92809a"
-      c="#181528"
-      ta="center"
-      w="80%"
-      p="xl"
-      style={{ borderRadius: "2rem" }}
-    >
+    <Box className={styles.container} ta="center">
       <DeleteCompetitionButton />
-      <Title
-        id="competitionNameDisplay"
-        order={1}
-        mt="xl"
-        tt="uppercase"
-        c="#e3dee3"
-      >
+      <Title className={styles.competitionName} tt="uppercase">
         {storedCompetitionObject.name}
       </Title>
 
-      <SimpleGrid
-        cols={{ base: 2, sm: 4 }}
-        spacing="xs"
-        verticalSpacing="xs"
-        mb="xl"
-      >
-        <Stack>
-          <Text class="timeUnit">{days}</Text>
-          <Text class="timeUnitLabel">Days</Text>
-        </Stack>
-        <Stack>
-          <Text class="timeUnit">{hours}</Text>
-          <Text class="timeUnitLabel">Hours</Text>
-        </Stack>
-        <Stack>
-          <Text class="timeUnit">{minutes}</Text>
-          <Text class="timeUnitLabel">Minutes</Text>
-        </Stack>
-        <Stack>
-          <Text class="timeUnit">{seconds}</Text>
-          <Text class="timeUnitLabel">Seconds</Text>
-        </Stack>
+      <SimpleGrid cols={{ base: 2, sm: 4 }} verticalSpacing="xl">
+        {timeUnits}
       </SimpleGrid>
     </Box>
   );
